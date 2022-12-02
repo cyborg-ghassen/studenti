@@ -6,19 +6,13 @@ public class Database {
     static DatabaseConnection connection = new DatabaseConnection();
     static Connection c;
 
-    static String query = "load data LOCAL INFILE NULL INTO TABLE table_name";
+    static String query = "create database if not exists studenti";
 
     static {
         try {
             c = connection.connect();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-        } finally {
-            try {
-                c.close();
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
-            }
         }
     }
 
@@ -41,7 +35,7 @@ public class Database {
     public Database() throws SQLException {}
 
     void createTable(String name) throws SQLException {
-        query = "create table " + name + " (" +
+        query = "create table if not exists " + name + " (" +
                 "id bigint not null auto_increment," +
                 "constraint " + name + "_pk primary key (id))";
         statement.execute(query);
@@ -90,5 +84,10 @@ public class Database {
         set = statement.getResultSet();
         statement.close();
         return set;
+    }
+
+    @Override
+    public String toString() {
+        return "database connected.";
     }
 }
