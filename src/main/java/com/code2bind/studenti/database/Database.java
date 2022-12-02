@@ -6,7 +6,7 @@ public class Database {
     static DatabaseConnection connection = new DatabaseConnection();
     static Connection c;
 
-    static String query;
+    static String query = "load data LOCAL INFILE NULL INTO TABLE table_name";
 
     static {
         try {
@@ -20,7 +20,7 @@ public class Database {
 
     static {
         try {
-            statement = (PreparedStatement) c.createStatement();
+            statement = c.prepareStatement(query);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -29,54 +29,42 @@ public class Database {
     public Database() throws SQLException {}
 
     void createTable(String name) throws SQLException {
-        query = "create table ?(" +
+        query = "create table " + name + " (" +
                 "id bigint not null auto_increment," +
-                "constraint ? primary key (id))";
-        statement.setString(1, name);
-        statement.setString(2, name);
+                "constraint " + name + "_pk primary key (id))";
         statement.execute(query);
         statement.close();
     }
 
     void alterTable(String name, String field, int size) throws SQLException {
-        query = "alter table ? add ? varchar(?)";
-        statement.setString(1, name);
-        statement.setString(2, field);
-        statement.setInt(3, size);
+        query = "alter table " + name + " add " + field + " varchar(" + size + ")";
         statement.execute(query);
         statement.close();
     }
 
     void alterTable(String name, String field) throws SQLException {
-        query = "alter table ? add ? int";
-        statement.setString(1, name);
-        statement.setString(2, field);
+        query = "alter table " + name + " add " + field + " int";
         statement.execute(query);
         statement.close();
     }
 
     void alterTable(String name, String field, boolean bool) throws SQLException {
         if (bool){
-            query = "alter table ? add ? tinyint";
-            statement.setString(1, name);
-            statement.setString(2, field);
+            query = "alter table " + name + " add " + field + " tinyint";
             statement.execute(query);
             statement.close();
         }
     }
 
     void InsertData(String name, Array values) throws SQLException {
-        query = "insert into ? values ?";
-        statement.setString(1, name);
-        statement.setArray(2, values);
+        query = "insert into " + name + " values " + values;
         statement.execute(query);
         statement.close();
     }
 
     ResultSet SelectData(String name) throws SQLException {
         ResultSet set;
-        query = "select * from ?";
-        statement.setString(1, name);
+        query = "select * from " + name;
         statement.execute(query);
         set = statement.getResultSet();
         statement.close();
@@ -85,9 +73,7 @@ public class Database {
 
     ResultSet SelectData(String name, String value) throws SQLException {
         ResultSet set;
-        query = "select ? from ?";
-        statement.setString(1, value);
-        statement.setString(2, name);
+        query = "select " + value + " from " + name;
         statement.execute(query);
         set = statement.getResultSet();
         statement.close();
