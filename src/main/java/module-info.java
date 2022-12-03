@@ -10,4 +10,10 @@ module com.code2bind.studenti {
 
     opens com.code2bind.studenti to javafx.fxml;
     exports com.code2bind.studenti;
+    exports com.code2bind.studenti.managers;
+    opens com.code2bind.studenti.managers to javafx.fxml;
+    exports com.code2bind.studenti.auth;
+    opens com.code2bind.studenti.auth to javafx.fxml;
+    exports com.code2bind.studenti.exceptions;
+    opens com.code2bind.studenti.exceptions to javafx.fxml;
 }
