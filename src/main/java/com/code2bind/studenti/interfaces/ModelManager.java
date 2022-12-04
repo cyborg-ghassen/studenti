@@ -9,7 +9,9 @@ import java.sql.SQLException;
 public interface ModelManager {
     Database DATABASE = null;
 
-    void save(boolean force_insert, boolean force_update, String using, String update_fields) throws ValueError, SQLException;
+    ResultSet save(boolean force_insert, boolean force_update, String using, String update_fields) throws ValueError, SQLException, IllegalAccessException;
+
+    ResultSet save() throws SQLException;
 
     ResultSet delete(String using, boolean keep_parents);
 

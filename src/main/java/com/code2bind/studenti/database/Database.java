@@ -48,28 +48,24 @@ public class Database {
     public void alterTable(String name, String field, int size) throws SQLException {
         query = "alter table " + name + " add " + field + " varchar(" + size + ")";
         statement.execute(query);
-        statement.close();
     }
 
     public void alterTable(String name, String field) throws SQLException {
         query = "alter table " + name + " add " + field + " int";
         statement.execute(query);
-        statement.close();
     }
 
     public void alterTable(String name, String field, boolean bool) throws SQLException {
         if (bool){
             query = "alter table " + name + " add " + field + " tinyint";
             statement.execute(query);
-            statement.close();
         }
     }
 
     public void alterTable(String name, String field, String key, String reference) throws SQLException {
-        query = "alter table " + name + " add " + field + " bigint add constraint " + name + "_" + reference + "_fk " +
-                "foreign key (id) references table_name (id)";
+        query = "alter table " + name + " add constraint " + name + "_" + reference + "_fk " +
+                "foreign key (" + field + ") references " + reference + " (" + key + ")";
         statement.execute(query);
-        statement.close();
     }
 
     public void InsertData(String name, Dictionary<String, String> values) throws SQLException {
@@ -92,7 +88,6 @@ public class Database {
         }
         query = query.concat(")");
         statement.execute(query);
-        statement.close();
     }
 
     public ResultSet SelectData(String name) throws SQLException {
@@ -100,7 +95,6 @@ public class Database {
         query = "select * from " + name;
         statement.execute(query);
         set = statement.getResultSet();
-        statement.close();
         return set;
     }
 
@@ -109,7 +103,14 @@ public class Database {
         query = "select " + value + " from " + name;
         statement.execute(query);
         set = statement.getResultSet();
-        statement.close();
+        return set;
+    }
+
+    public ResultSet SelectData(String name, String value, String condition) throws SQLException {
+        ResultSet set;
+        query = "select " + value + " from " + name + " where " + condition;
+        statement.execute(query);
+        set = statement.getResultSet();
         return set;
     }
 

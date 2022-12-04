@@ -1,30 +1,32 @@
 package com.code2bind.studenti.auth;
 
-import com.code2bind.studenti.managers.BaseManager;
+import com.code2bind.studenti.database.Database;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Dictionary;
+import java.util.Hashtable;
 
 public class Permission {
+    Database database = new Database();
+    ResultSet set;
 
-    String[] crud = {"view", "add", "update", "delete"};
+    ContentType type = new ContentType();
 
-    ContentType type = new ContentType("auth_permission");
+    public static Dictionary<String, String> fields = new Hashtable<>();
+    public static Dictionary<String, String> values = new Hashtable<>();
 
     public Permission() throws SQLException {
-        type.setName("permission");
-        type.fields.put("name", "varchar(80)");
-        type.fields.put("contenttype_id", "bigint");
-        type.fields.put("codename", "varchar(80)");
-        this.insertValues();
+        String name = "permission";
+        fields.put("name", "varchar(80) unique");
+        fields.put("contenttype_id", "bigint");
+        fields.put("codename", "varchar(80)");
+        set = database.createTable(name, fields);
+        // alter foreign key for contenttype
+        database.alterTable(name, "contenttype_id", "id", "contenttype");
+        // insert corresponding values for both contenttype and permissions
+        values.put("model", name);
+        values.put("app_label", "auth");
+        type.insert("contenttype", values);
     }
-
-    void insertValues() throws SQLException {
-        for (String s : crud) {
-            type.values.put("name", "Can " + s + " " + type.getName());
-            type.values.put("contenttype_id", String.valueOf(type.set.getString(0)));
-            type.values.put("codename", s + "_" + type.getName());
-            BaseManager.database.InsertData(type.getName(), type.values);
-        }
-    }
-
 }
