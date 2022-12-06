@@ -13,15 +13,34 @@ import java.util.Objects;
 public class Model implements ModelManager {
     Database database = new Database();
 
-    public String name;
+    private String name;
 
-    public Dictionary<String, String> fields = new Hashtable<>();
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public Model() throws SQLException {}
+    public String getName() {
+        return name;
+    }
+
+    private Dictionary<String, String> fields = new Hashtable<>();
+
+    public void setFields(Dictionary<String, String> fields) {
+        this.fields = fields;
+    }
+
+    public Dictionary<String, String> getFields() {
+        return this.fields;
+    }
+
+    public Model(String tableName) throws SQLException {
+
+    }
 
     public Model(String tableName, Dictionary<String, String> fields) throws SQLException {
         this.name = tableName;
         this.fields = fields;
+        database.createTable(name, fields);
     }
 
     @Override
@@ -43,5 +62,9 @@ public class Model implements ModelManager {
     @Override
     public ResultSet delete(String using, boolean keep_parents) {
         return null;
+    }
+
+    public String getAppName(){
+        return getClass().getPackageName();
     }
 }
