@@ -9,7 +9,7 @@ public class Test {
         Dictionary<String, String> fields = new Hashtable<>();
         fields.put("user_id", "bigint");
         fields.put("email", "varchar(100)");
-        fields.put("confirmed", "tinyint default 0");
+        fields.put("confirmed", "tinyint");
         UserEmail userEmail = new UserEmail("account_useremail", "user_email", fields);
     }
 }
