@@ -1,6 +1,6 @@
-package com.code2bind.studenti.database;
+package com.code2bind.studenti;
 
-import com.code2bind.studenti.LoggedInController;
+import com.code2bind.studenti.database.Database;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -14,7 +14,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Dictionary;
 import java.util.Hashtable;
-import com.code2bind.studenti.account.User.*;
 
 import static com.code2bind.studenti.account.User.get_SHA_256_SecurePassword;
 
@@ -61,8 +60,39 @@ public class DBUtils {
                 dictionary.put("password", get_SHA_256_SecurePassword(password));
                 dictionary.put("email", email);
                 database.InsertData("account_user", dictionary);
+                changeScene(event, "logged-in.fxml", "Welcome", username, email);
             }
         }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void loginUser(ActionEvent event, String username, String password){
+        ResultSet set;
+        try{
+            Database database = new Database();
+            set = database.SelectData("account_user", "*", "username=" + username);
+            if (set.isBeforeFirst()){
+                System.out.println("user not found in the database");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Provided credential are incorrect.");
+                alert.show();
+            } else {
+                while (set.next()){
+                    String retreivedPassword = set.getString("password");
+                    String retreivedUsername = set.getString("username");
+                    if (retreivedPassword.equals(get_SHA_256_SecurePassword(password))){
+                        changeScene(event, "logged-in.fxml", "Welcome", retreivedUsername, retreivedPassword);
+                    }
+                    else {
+                        System.out.println("Password did not match.");
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setContentText("Password did not match.");
+                        alert.show();
+                    }
+                }
+            }
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }

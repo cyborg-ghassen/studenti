@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.code2bind.studenti.LoginController">
    <children>
-      <AnchorPane prefHeight="832.0" prefWidth="1280.0" style="-fx-background-color: #FCFCFC;">
+      <AnchorPane prefHeight="732.0" prefWidth="1280.0" style="-fx-background-color: #FCFCFC;">
          <children>
             <ComboBox fx:id="cb_menu" prefWidth="150.0" promptText="Menu Label" style="-fx-background-color: #FFFFFF; -fx-border-color: #d7d7d7d; -fx-border-width: 1px; -fx-border-style: solid; -fx-border-radius: 15px;" AnchorPane.bottomAnchor="398.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="509.0" AnchorPane.topAnchor="392.0" />
             <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="146.0" text="Sign In" AnchorPane.bottomAnchor="620.0" AnchorPane.leftAnchor="364.0" AnchorPane.rightAnchor="370.0" AnchorPane.topAnchor="137.0">

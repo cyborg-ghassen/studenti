@@ -1,6 +1,5 @@
 package com.code2bind.studenti;
 
-import com.code2bind.studenti.database.DBUtils;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;

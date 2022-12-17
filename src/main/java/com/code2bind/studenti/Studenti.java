@@ -2,7 +2,9 @@ package com.code2bind.studenti;
 
 import javafx.application.Application;
 import javafx.application.Preloader;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
@@ -51,15 +53,10 @@ public class Studenti extends Application {
     public void start(Stage primaryStage) throws Exception {
         System.out.println(Studenti.STEP() + "Studenti#start (initialize and show primary application stage), thread: " + Thread.currentThread().getName());
 
-        Label title = new Label("This is your application!");
-        title.setTextAlignment(TextAlignment.CENTER);
-
-        VBox root = new VBox(title);
-        root.setAlignment(Pos.CENTER);
-
-        // Create scene and show application stage.
-        Scene scene = new Scene(root, WIDTH, HEIGHT);
-        primaryStage.setScene(scene);
+        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        primaryStage.setTitle("Login");
+        primaryStage.setResizable(false);
+        primaryStage.setScene(new Scene(root, 1280, 732));
         primaryStage.show();
     }
 }

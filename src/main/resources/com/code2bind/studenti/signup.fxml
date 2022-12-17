@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.code2bind.studenti.SignupController">
    <children>
-      <AnchorPane prefHeight="200.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane prefHeight="819.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;">
          <children>
             <Label style="-fx-font-weight: 800;" text="Sign Up" AnchorPane.bottomAnchor="603.0" AnchorPane.leftAnchor="566.0" AnchorPane.rightAnchor="568.0" AnchorPane.topAnchor="190.0">
                <font>
