@@ -26,7 +26,7 @@ public class User extends Model {
         return get_SHA_256_SecurePassword(password);
     }
 
-    private static String get_SHA_256_SecurePassword(String passwordToHash) {
+    public static String get_SHA_256_SecurePassword(String passwordToHash) {
         String generatedPassword = null;
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");

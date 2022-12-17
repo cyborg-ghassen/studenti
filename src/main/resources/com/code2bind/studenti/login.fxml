@@ -4,37 +4,37 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FCFCFC;" />
-      <AnchorPane style="-fx-background-color: #FCFCFC;">
+      <AnchorPane prefHeight="832.0" prefWidth="1280.0" style="-fx-background-color: #FCFCFC;">
          <children>
-            <ComboBox prefWidth="150.0" promptText="Menu Label" style="-fx-background-color: #FFFFFF; -fx-border-color: #d7d7d7d; -fx-border-width: 1px; -fx-border-style: solid; -fx-border-radius: 15px;" AnchorPane.bottomAnchor="398.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="309.0" AnchorPane.topAnchor="392.0" />
+            <ComboBox fx:id="cb_menu" prefWidth="150.0" promptText="Menu Label" style="-fx-background-color: #FFFFFF; -fx-border-color: #d7d7d7d; -fx-border-width: 1px; -fx-border-style: solid; -fx-border-radius: 15px;" AnchorPane.bottomAnchor="398.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="509.0" AnchorPane.topAnchor="392.0" />
             <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="146.0" text="Sign In" AnchorPane.bottomAnchor="620.0" AnchorPane.leftAnchor="364.0" AnchorPane.rightAnchor="370.0" AnchorPane.topAnchor="137.0">
                <font>
                   <Font name="Garuda" size="36.0" />
                </font>
             </Label>
-            <TextField promptText="Username" style="-fx-background-color: #FCFCFC; -fx-border-color: #D7D7D7; -fx-border-radius: 15px; -fx-border-width: 1px; -fx-border-style: solid;" AnchorPane.bottomAnchor="529.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="306.0" AnchorPane.topAnchor="258.0">
+            <TextField fx:id="tf_username" promptText="Username" style="-fx-background-color: #FCFCFC; -fx-border-color: #D7D7D7; -fx-border-radius: 15px; -fx-border-width: 1px; -fx-border-style: solid;" AnchorPane.bottomAnchor="529.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="506.0" AnchorPane.topAnchor="258.0">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
-            <TextField layoutX="310.0" layoutY="268.0" promptText="Password" style="-fx-background-color: #FCFCFC; -fx-border-color: #D7D7D7; -fx-border-radius: 15px; -fx-border-width: 1px; -fx-border-style: solid;" AnchorPane.bottomAnchor="462.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="306.0" AnchorPane.topAnchor="325.0">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </TextField>
-            <Hyperlink style="-fx-font-weight: 400;" text="Forget password?" textFill="#c1c1c1" AnchorPane.bottomAnchor="359.0" AnchorPane.leftAnchor="469.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="456.0">
+            <Hyperlink fx:id="link_forget" style="-fx-font-weight: 400;" text="Forget password?" textFill="#c1c1c1" AnchorPane.bottomAnchor="359.0" AnchorPane.leftAnchor="669.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="456.0">
                <font>
                   <Font name="Gargi" size="13.0" />
                </font>
             </Hyperlink>
-            <Button mnemonicParsing="false" style="-fx-background-color: #000000; -fx-border-radius: 35px;" text="LOGIN" textFill="WHITE" AnchorPane.bottomAnchor="229.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="303.0" AnchorPane.topAnchor="559.0" />
-            <Button mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-style: solid; -fx-border-width: 1px; -fx-border-radius: 35px;" text="SIGN UP" AnchorPane.bottomAnchor="161.0" AnchorPane.leftAnchor="303.0" AnchorPane.rightAnchor="303.0" AnchorPane.topAnchor="627.0" />
+            <Button fx:id="button_log_in" mnemonicParsing="false" style="-fx-border-color: #ffffff; -fx-background-color: #000000; -fx-background-radius: 35px; -fx-border-radius: 35px; -fx-font-weight: 600;" text="LOGIN" textFill="WHITE" AnchorPane.bottomAnchor="229.0" AnchorPane.leftAnchor="503.0" AnchorPane.rightAnchor="503.0" AnchorPane.topAnchor="559.0">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <Button fx:id="button_sign_up" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-style: solid; -fx-border-width: 1px; -fx-border-radius: 35px;" text="SIGN UP" AnchorPane.bottomAnchor="161.0" AnchorPane.leftAnchor="503.0" AnchorPane.rightAnchor="503.0" AnchorPane.topAnchor="627.0" />
+            <PasswordField fx:id="tf_password" promptText="Password" style="-fx-background-color: #fcfcfc; -fx-border-color: #d7d7d7; -fx-border-radius: 15px;" AnchorPane.bottomAnchor="462.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="506.0" AnchorPane.topAnchor="325.0">
+               <font>
+                  <Font name="Gadugi" size="16.0" />
+               </font>
+            </PasswordField>
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FCFCFC;" />
    </children>
 </HBox>

@@ -129,4 +129,11 @@ public class Database {
         }
         return arr;
     }
+
+    public ResultSet updateData(String tableName, String field, String value, String condition) throws SQLException {
+        ResultSet set;
+        query = "update " + tableName + " set " + field + "=" + value + " where " + condition;
+        statement.execute(query);
+        return statement.getResultSet();
+    }
 }

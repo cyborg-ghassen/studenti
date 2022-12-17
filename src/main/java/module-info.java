@@ -1,6 +1,7 @@
 module com.code2bind.studenti {
     requires javafx.controls;
     requires javafx.fxml;
+    requires fontawesomefx;
 
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
