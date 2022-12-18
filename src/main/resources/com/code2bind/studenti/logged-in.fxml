@@ -11,7 +11,7 @@
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="732.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.code2bind.studenti.LoggedInController">
    <children>
-      <AnchorPane maxHeight="732.0" prefHeight="732.0" prefWidth="308.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane maxHeight="744.0" prefHeight="744.0" prefWidth="308.0" style="-fx-background-color: #ffffff;">
          <children>
             <Circle fill="#5733e81a" layoutX="107.0" radius="200.0" stroke="TRANSPARENT" strokeType="INSIDE" AnchorPane.bottomAnchor="802.0" AnchorPane.topAnchor="-200.0" />
             <Label fx:id="label_welcome" layoutX="27.0" layoutY="14.0" prefHeight="51.0" prefWidth="205.0" style="-fx-font-weight: 800;" text="Student Hub" AnchorPane.bottomAnchor="937.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="14.0">
@@ -24,33 +24,9 @@
                   <Font name="Century Gothic" size="16.0" />
                </font>
             </Label>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b0b0b011" height="50.0" layoutX="21.0" layoutY="238.0" stroke="TRANSPARENT" strokeType="INSIDE" width="265.0" AnchorPane.bottomAnchor="714.4" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="238.0" />
-            <Label fx:id="menu_dashboard" layoutX="109.0" layoutY="250.0" style="-fx-font-weight: 500;" text="Dashboard">
-               <font>
-                  <Font name="Inter Regular" size="20.0" />
-               </font>
-            </Label>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b0b0b047" height="50.0" layoutX="21.0" layoutY="312.0" stroke="TRANSPARENT" strokeType="INSIDE" width="265.0" />
-            <Label layoutX="108.0" layoutY="324.0" style="-fx-font-weight: 500;" text="Dashboard">
-               <font>
-                  <Font name="Inter Regular" size="20.0" />
-               </font>
-            </Label>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b0b0b047" height="50.0" layoutX="21.0" layoutY="386.0" stroke="TRANSPARENT" strokeType="INSIDE" width="265.0" />
-            <Label layoutX="108.0" layoutY="398.0" style="-fx-font-weight: 500;" text="Dashboard">
-               <font>
-                  <Font name="Inter Regular" size="20.0" />
-               </font>
-            </Label>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b0b0b047" height="50.0" layoutX="21.0" layoutY="457.0" stroke="TRANSPARENT" strokeType="INSIDE" width="265.0" />
-            <Label layoutX="108.0" layoutY="469.0" style="-fx-font-weight: 500;" text="Dashboard">
-               <font>
-                  <Font name="Inter Regular" size="20.0" />
-               </font>
-            </Label>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b5b5b51a" height="62.0" layoutY="779.0" stroke="TRANSPARENT" strokeType="INSIDE" width="308.0" AnchorPane.bottomAnchor="161.39999999999998" AnchorPane.topAnchor="779.0" />
-            <ImageView fx:id="avatar_img" fitHeight="39.0" fitWidth="40.0" layoutX="40.0" layoutY="791.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="172.39999999999998" AnchorPane.leftAnchor="40.0" />
-            <Label fx:id="label_fullname" layoutX="80.0" layoutY="800.0" style="-fx-font-weight: 600;" text="Ghassen Bougacha">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b5b5b51a" height="62.0" layoutY="673.0" stroke="TRANSPARENT" strokeType="INSIDE" width="308.0" AnchorPane.bottomAnchor="267.4" AnchorPane.topAnchor="673.0" />
+            <ImageView fx:id="avatar_img" fitHeight="39.0" fitWidth="40.0" layoutX="40.0" layoutY="684.599999999994" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="278.800000000006" AnchorPane.leftAnchor="40.0" />
+            <Label fx:id="label_fullname" layoutX="80.0" layoutY="695.0" style="-fx-font-weight: 600;" text="Ghassen Bougacha">
                <padding>
                   <Insets left="15.0" />
                </padding>
@@ -58,15 +34,10 @@
                   <Font name="Inter Regular" size="16.0" />
                </font>
             </Label>
-            <ImageView fitHeight="31.0" fitWidth="40.0" layoutX="44.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@icons/pie_chart.jfif" />
-               </image>
-            </ImageView>
-            <MenuButton fx:id="menu_settings" ellipsisString="" layoutX="254.0" layoutY="800.0" mnemonicParsing="false" popupSide="TOP" prefHeight="20.0" prefWidth="40.0" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.leftAnchor="254.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="800.0">
+            <MenuButton fx:id="menu_settings" ellipsisString="" layoutX="254.0" layoutY="694.0" mnemonicParsing="false" popupSide="TOP" prefHeight="20.0" prefWidth="40.0" textAlignment="CENTER" textOverrun="CLIP" AnchorPane.leftAnchor="254.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="694.0">
               <items>
                 <MenuItem fx:id="profile_link" text="Profile" />
-                <MenuItem fx:id="logout_button" text="Logout" />
+                <MenuItem fx:id="button_logout" text="Logout" />
               </items>
                <effect>
                   <ImageInput>
@@ -79,115 +50,165 @@
                   <Font size="1.0" />
                </font>
             </MenuButton>
-            <Button fx:id="button_logout" layoutX="110.0" layoutY="641.0" mnemonicParsing="false" text="Button" />
+            <VBox layoutX="27.0" layoutY="224.0" prefHeight="426.0" prefWidth="252.0">
+               <children>
+                  <Button fx:id="button_dashboard" mnemonicParsing="false" prefHeight="48.0" prefWidth="252.0" style="-fx-background-color: #B7B7B71A; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Dashboard">
+                     <font>
+                        <Font name="Gadugi" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="button_account" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="252.0" style="-fx-background-color: #B7B7B71A; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Accounts">
+                     <font>
+                        <Font name="Gadugi" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="button_class" layoutX="10.0" layoutY="58.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="252.0" style="-fx-background-color: #B7B7B71A; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Class">
+                     <font>
+                        <Font name="Gadugi" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="button_material" layoutX="10.0" layoutY="106.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="252.0" style="-fx-background-color: #B7B7B71A; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Material">
+                     <font>
+                        <Font name="Gadugi" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="button_absence" layoutX="10.0" layoutY="154.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="252.0" style="-fx-background-color: #B7B7B71A; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Absence">
+                     <font>
+                        <Font name="Gadugi" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
          </children>
       </AnchorPane>
-      <AnchorPane maxHeight="732.0" prefHeight="732.0" prefWidth="973.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane maxHeight="732.0" prefHeight="732.0" prefWidth="998.0" style="-fx-background-color: #ffffff;">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="113.0" layoutX="14.0" layoutY="118.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 2px; -fx-stroke: #ECEEF7; border-radius: 6px;" width="217.0" AnchorPane.bottomAnchor="515.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="758.8" AnchorPane.topAnchor="117.0" />
+            <Pane fx:id="dashboard_pane" layoutX="14.0" layoutY="117.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="113.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 2px; -fx-stroke: #ECEEF7; border-radius: 6px;" width="217.0" />
+                  <Label layoutX="22.599998474121094" layoutY="14.0" prefHeight="26.0" prefWidth="136.0" style="-fx-font-weight: 700;" text="Total Employees" textFill="#343434">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="13.0" layoutY="46.0" prefHeight="40.0" prefWidth="78.0" style="-fx-font-weight: 700;" text="800" textFill="#232323">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="80.0" style="-fx-font-weight: 400;" text="Employees" textFill="#949494">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="113.0" layoutX="737.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 2px; -fx-stroke: #ECEEF7; border-radius: 6px;" width="217.0" />
+                  <Label layoutX="762.2000122070312" layoutY="14.0" prefHeight="26.0" prefWidth="136.0" style="-fx-font-weight: 700;" text="Total Employees" textFill="#343434">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="752.0" layoutY="46.0" prefHeight="40.0" prefWidth="78.0" style="-fx-font-weight: 700;" text="800" textFill="#232323">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="754.0" layoutY="80.0" style="-fx-font-weight: 400;" text="Employees" textFill="#949494">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="113.0" layoutX="499.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 2px; -fx-stroke: #ECEEF7; border-radius: 6px;" width="217.0" />
+                  <Label layoutX="521.2000122070312" layoutY="14.0" prefHeight="26.0" prefWidth="136.0" style="-fx-font-weight: 700;" text="Total Employees" textFill="#343434">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="512.0" layoutY="46.0" prefHeight="40.0" prefWidth="78.0" style="-fx-font-weight: 700;" text="800" textFill="#232323">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="514.0" layoutY="80.0" style="-fx-font-weight: 400;" text="Employees" textFill="#949494">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="113.0" layoutX="246.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 2px; -fx-stroke: #ECEEF7; border-radius: 6px;" width="217.0" />
+                  <Label layoutX="268.20001220703125" layoutY="14.0" prefHeight="26.0" prefWidth="136.0" style="-fx-font-weight: 700;" text="Total Employees" textFill="#343434">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="259.0" layoutY="46.0" prefHeight="40.0" prefWidth="78.0" style="-fx-font-weight: 700;" text="800" textFill="#232323">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="261.0" layoutY="80.0" style="-fx-font-weight: 400;" text="Employees" textFill="#949494">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <StackedBarChart categoryGap="20.0" layoutY="133.0" legendSide="TOP" prefHeight="232.0" prefWidth="962.0" style="-fx-background-color: #ffffff; -fx-border-radius: 6px;" title="Statistics">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                     <effect>
+                        <Blend />
+                     </effect>
+                  </StackedBarChart>
+                  <TableView editable="true" layoutY="387.0" prefHeight="219.0" prefWidth="620.0" tableMenuButtonVisible="true">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="Name" />
+                      <TableColumn prefWidth="75.0" text="Department" />
+                        <TableColumn prefWidth="75.0" text="Age" />
+                        <TableColumn prefWidth="75.0" text="Disipline" />
+                        <TableColumn prefWidth="75.0" text="Status" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <PieChart layoutX="621.0" layoutY="351.0" prefHeight="254.0" prefWidth="344.0" title="Employee Composition" />
+               </children>
+            </Pane>
             <TextField layoutX="247.0" layoutY="39.0" prefHeight="45.0" prefWidth="433.0" promptText="Search..." style="-fx-font-weight: 400; -fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 50px; -fx-border-radius: 50px;" AnchorPane.bottomAnchor="748.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="369.0" AnchorPane.topAnchor="39.0">
                <font>
                   <Font name="Century Gothic" size="16.0" />
                </font>
             </TextField>
-            <Label layoutX="30.0" layoutY="131.0" prefHeight="26.0" prefWidth="136.0" style="-fx-font-weight: 700;" text="Total Employees" textFill="#343434" AnchorPane.bottomAnchor="681.0" AnchorPane.rightAnchor="825.0" AnchorPane.topAnchor="131.0">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label prefHeight="40.0" prefWidth="78.0" style="-fx-font-weight: 700;" text="800" textFill="#232323" AnchorPane.bottomAnchor="640.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="885.0" AnchorPane.topAnchor="163.0">
-               <font>
-                  <Font size="28.0" />
-               </font>
-            </Label>
-            <Label layoutX="29.0" layoutY="197.0" style="-fx-font-weight: 400;" text="Employees" textFill="#949494" AnchorPane.bottomAnchor="621.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="864.0" AnchorPane.topAnchor="197.0">
-               <font>
-                  <Font size="14.0" />
-               </font></Label>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="113.0" layoutX="759.0" layoutY="117.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 2px; -fx-stroke: #ECEEF7; border-radius: 6px;" width="217.0" AnchorPane.bottomAnchor="613.2" AnchorPane.leftAnchor="759.0" AnchorPane.rightAnchor="14.399999999999977" AnchorPane.topAnchor="117.0" />
-            <TextField layoutX="247.0" layoutY="39.0" prefHeight="45.0" prefWidth="433.0" promptText="Search..." style="-fx-font-weight: 400; -fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 50px; -fx-border-radius: 50px;" AnchorPane.bottomAnchor="748.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="369.0" AnchorPane.topAnchor="39.0">
-               <font>
-                  <Font name="Century Gothic" size="16.0" />
-               </font>
-            </TextField>
-            <Label layoutX="775.0" layoutY="131.0" prefHeight="26.0" prefWidth="136.0" style="-fx-font-weight: 700;" text="Total Employees" textFill="#343434" AnchorPane.bottomAnchor="681.0" AnchorPane.rightAnchor="79.39999999999998" AnchorPane.topAnchor="131.0">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="772.0" layoutY="163.0" prefHeight="40.0" prefWidth="78.0" style="-fx-font-weight: 700;" text="800" textFill="#232323" AnchorPane.bottomAnchor="640.0" AnchorPane.leftAnchor="772.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="163.0">
-               <font>
-                  <Font size="28.0" />
-               </font>
-            </Label>
-            <Label layoutX="774.0" layoutY="197.0" style="-fx-font-weight: 400;" text="Employees" textFill="#949494" AnchorPane.bottomAnchor="621.0" AnchorPane.leftAnchor="774.0" AnchorPane.rightAnchor="119.0" AnchorPane.topAnchor="197.0">
-               <font>
-                  <Font size="14.0" />
-               </font></Label>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="113.0" layoutX="513.0" layoutY="117.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 2px; -fx-stroke: #ECEEF7; border-radius: 6px;" width="217.0" AnchorPane.bottomAnchor="613.2" AnchorPane.leftAnchor="513.0" AnchorPane.rightAnchor="260.4" AnchorPane.topAnchor="117.0" />
-            <TextField layoutX="247.0" layoutY="39.0" prefHeight="45.0" prefWidth="433.0" promptText="Search..." style="-fx-font-weight: 400; -fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 50px; -fx-border-radius: 50px;" AnchorPane.bottomAnchor="748.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="369.0" AnchorPane.topAnchor="39.0">
-               <font>
-                  <Font name="Century Gothic" size="16.0" />
-               </font>
-            </TextField>
-            <Label layoutX="528.0" layoutY="131.0" prefHeight="26.0" prefWidth="136.0" style="-fx-font-weight: 700;" text="Total Employees" textFill="#343434" AnchorPane.bottomAnchor="681.0" AnchorPane.rightAnchor="326.4" AnchorPane.topAnchor="131.0">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="526.0" layoutY="163.0" prefHeight="40.0" prefWidth="78.0" style="-fx-font-weight: 700;" text="800" textFill="#232323" AnchorPane.bottomAnchor="640.0" AnchorPane.leftAnchor="526.0" AnchorPane.rightAnchor="386.0" AnchorPane.topAnchor="163.0">
-               <font>
-                  <Font size="28.0" />
-               </font>
-            </Label>
-            <Label layoutX="528.0" layoutY="197.0" style="-fx-font-weight: 400;" text="Employees" textFill="#949494" AnchorPane.bottomAnchor="621.0" AnchorPane.leftAnchor="528.0" AnchorPane.rightAnchor="365.0" AnchorPane.topAnchor="197.0">
-               <font>
-                  <Font size="14.0" />
-               </font></Label>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="113.0" layoutX="260.0" layoutY="117.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 2px; -fx-stroke: #ECEEF7; border-radius: 6px;" width="217.0" AnchorPane.bottomAnchor="613.2" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="513.4" AnchorPane.topAnchor="117.0" />
-            <TextField layoutX="247.0" layoutY="39.0" prefHeight="45.0" prefWidth="433.0" promptText="Search..." style="-fx-font-weight: 400; -fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 50px; -fx-border-radius: 50px;" AnchorPane.bottomAnchor="748.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="369.0" AnchorPane.topAnchor="39.0">
-               <font>
-                  <Font name="Century Gothic" size="16.0" />
-               </font>
-            </TextField>
-            <Label layoutX="275.0" layoutY="131.0" prefHeight="26.0" prefWidth="136.0" style="-fx-font-weight: 700;" text="Total Employees" textFill="#343434" AnchorPane.bottomAnchor="681.0" AnchorPane.rightAnchor="579.4" AnchorPane.topAnchor="131.0">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="273.0" layoutY="163.0" prefHeight="40.0" prefWidth="78.0" style="-fx-font-weight: 700;" text="800" textFill="#232323" AnchorPane.bottomAnchor="640.0" AnchorPane.leftAnchor="273.0" AnchorPane.rightAnchor="639.0" AnchorPane.topAnchor="163.0">
-               <font>
-                  <Font size="28.0" />
-               </font>
-            </Label>
-            <Label layoutX="275.0" layoutY="197.0" style="-fx-font-weight: 400;" text="Employees" textFill="#949494" AnchorPane.bottomAnchor="621.0" AnchorPane.leftAnchor="275.0" AnchorPane.rightAnchor="618.0" AnchorPane.topAnchor="197.0">
-               <font>
-                  <Font size="14.0" />
-               </font></Label>
-            <StackedBarChart categoryGap="20.0" layoutX="14.0" layoutY="237.0" legendSide="TOP" prefHeight="400.0" prefWidth="961.0" style="-fx-background-color: #ffffff; -fx-border-radius: 6px;" title="Statistics" AnchorPane.bottomAnchor="284.0" AnchorPane.topAnchor="250.0">
-              <xAxis>
-                <CategoryAxis side="BOTTOM" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis side="LEFT" />
-              </yAxis>
-               <effect>
-                  <Blend />
-               </effect>
-            </StackedBarChart>
-            <TableView editable="true" layoutY="602.0" prefHeight="219.0" prefWidth="620.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="367.0" AnchorPane.topAnchor="602.0">
-              <columns>
-                <TableColumn prefWidth="75.0" text="Name" />
-                <TableColumn prefWidth="75.0" text="Department" />
-                  <TableColumn prefWidth="75.0" text="Age" />
-                  <TableColumn prefWidth="75.0" text="Disipline" />
-                  <TableColumn prefWidth="75.0" text="Status" />
-              </columns>
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
-            </TableView>
-            <PieChart title="Employee Composition" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="625.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="567.0" />
+            <ScrollBar fx:id="scroll_bar" layoutX="983.0" orientation="VERTICAL" prefHeight="732.0" prefWidth="14.0" />
+            <Pane fx:id="class_pane" prefHeight="200.0" prefWidth="200.0" />
+            <Pane fx:id="material_pane" prefHeight="200.0" prefWidth="200.0" />
+            <Pane fx:id="absence_pane" prefHeight="200.0" prefWidth="200.0" />
+            <Pane fx:id="account_pane" layoutX="14.0" layoutY="117.0" prefHeight="614.0" prefWidth="950.0">
+               <children>
+                  <TableView fx:id="users_table" editable="true" layoutY="188.0" prefHeight="260.0" prefWidth="950.0" tableMenuButtonVisible="true">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="#" />
+                      <TableColumn prefWidth="75.0" text="Username" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
    </children>

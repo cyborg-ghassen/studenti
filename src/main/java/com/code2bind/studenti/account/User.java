@@ -62,10 +62,10 @@ public class User extends Model {
         fields.put("created_at", "datetime DEFAULT CURRENT_TIMESTAMP");
         fields.put("updated_at", "datetime DEFAULT CURRENT_TIMESTAMP");
         fields.put("last_login", "datetime DEFAULT CURRENT_TIMESTAMP");
-        fields.put("is_superuser", "tinyint");
-        fields.put("is_active", "tinyint");
-        fields.put("is_staff", "tinyint");
-        fields.put("is_light", "tinyint");
+        fields.put("is_superuser", "tinyint default 0");
+        fields.put("is_active", "tinyint default 1");
+        fields.put("is_staff", "tinyint default 0");
+        fields.put("is_light", "tinyint default 0");
         return fields;
     }
 }

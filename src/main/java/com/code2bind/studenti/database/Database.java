@@ -127,11 +127,11 @@ public class Database {
         for(int i = 1; i<=count; i++) {
             arr[i] = setMetaData.getColumnName(i);
         }
+        set.close();
         return arr;
     }
 
     public ResultSet updateData(String tableName, String field, String value, String condition) throws SQLException {
-        ResultSet set;
         query = "update " + tableName + " set " + field + "=" + value + " where " + condition;
         statement.execute(query);
         return statement.getResultSet();
@@ -140,5 +140,6 @@ public class Database {
     public void close() throws SQLException {
         c.close();
         statement.close();
+        query = "";
     }
 }

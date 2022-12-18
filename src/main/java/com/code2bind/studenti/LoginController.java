@@ -28,22 +28,14 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        button_log_in.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                try {
-                    DBUtils.loginUser(event, tf_username.getText(), tf_password.getText());
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+        button_log_in.setOnAction(event -> {
+            try {
+                DBUtils.loginUser(event, tf_username.getText(), tf_password.getText());
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
             }
         });
 
-        button_sign_up.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                DBUtils.changeScene(event, "signup.fxml", "Sign Up", null);
-            }
-        });
+        button_sign_up.setOnAction(event -> DBUtils.changeScene(event, "signup.fxml", "Sign Up", null));
     }
 }

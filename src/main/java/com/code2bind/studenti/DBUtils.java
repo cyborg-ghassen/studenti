@@ -28,6 +28,16 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 
 public class DBUtils {
+    static Database database;
+
+    static {
+        try {
+            database = new Database();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     public static void changeScene(ActionEvent event, String fxmlFile, String title, String username){
         Parent root = null;
         if (username != null){
@@ -50,16 +60,43 @@ public class DBUtils {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle(title);
         assert root != null;
-        stage.setScene(new Scene(root, 1280, 832));
+        stage.setScene(new Scene(root, 1280, 732));
+        stage.show();
+    }
+
+    public static void changeScene(Scene scene, String fxmlFile, String title, String username){
+        Parent root = null;
+        if (username != null){
+            try {
+                FXMLLoader loader = new FXMLLoader(DBUtils.class.getResource(fxmlFile));
+                root = loader.load();
+                LoggedInController loggedInController = loader.getController();
+                loggedInController.setUserInformation(username);
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
+        }
+        else {
+            try {
+                FXMLLoader loader = new FXMLLoader(DBUtils.class.getResource(fxmlFile));
+                root = loader.load();
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
+        }
+        Stage stage = (Stage) scene.getWindow();
+        stage.setTitle(title);
+        assert root != null;
+        stage.setScene(new Scene(root, 1280, 732));
         stage.show();
     }
 
     public static void signUpUser(ActionEvent event, String username, String email,  String password) throws SQLException {
-        ResultSet set;
-        Database database = new Database();
-        try{
-            set = database.SelectData("account_user", "*", "username='" + username + "'");
-            if (set.isBeforeFirst()){
+
+        try (ResultSet set = database.SelectData("account_user", "*", "username='" + username + "'")) {
+            if (set.isBeforeFirst()) {
                 System.out.println("User already exists");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("You cannot use this username");
@@ -72,29 +109,25 @@ public class DBUtils {
                 database.InsertData("account_user", dictionary);
                 changeScene(event, "logged-in.fxml", "Welcome", username);
             }
-        }catch (SQLException e){
-            e.printStackTrace();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
     }
 
     public static void loginUser(ActionEvent event, String username, String password) throws SQLException {
-        ResultSet set;
-        Database database = new Database();
-        try{
-            set = database.SelectData("account_user", "*", "username='" + username + "'");
-            if (set.isBeforeFirst()){
+        try (ResultSet set = database.SelectData("account_user", "*", "username='" + username + "'")) {
+            if (!set.isBeforeFirst()) {
                 System.out.println("user not found in the database");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Provided credential are incorrect.");
                 alert.show();
             } else {
-                while (set.next()){
+                while (set.next()) {
                     String retreivedPassword = set.getString("password");
                     String retreivedUsername = set.getString("username");
-                    if (retreivedPassword.equals(password)){
+                    if (retreivedPassword.equals(password)) {
                         changeScene(event, "logged-in.fxml", "Welcome", retreivedUsername);
-                    }
-                    else {
+                    } else {
                         System.out.println("Password did not match.");
                         Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setContentText("Password did not match.");
@@ -103,7 +136,7 @@ public class DBUtils {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 

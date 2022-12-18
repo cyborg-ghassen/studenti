@@ -32,29 +32,21 @@ public class SignupController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        button_sign_up.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                if (!tf_username.getText().trim().isEmpty() && !tf_password.getText().trim().isEmpty() && !tf_password.getText().trim().isEmpty()){
-                    try {
-                        DBUtils.signUpUser(event, tf_username.getText(), tf_email.getText(), tf_password.getText());
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                } else {
-                    System.out.println("Please fill in all information.");
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setContentText("Please fill in all information.");
-                    alert.show();
+        button_sign_up.setOnAction(event -> {
+            if (!tf_username.getText().trim().isEmpty() && !tf_password.getText().trim().isEmpty() && !tf_password.getText().trim().isEmpty()) {
+                try {
+                    DBUtils.signUpUser(event, tf_username.getText(), tf_email.getText(), tf_password.getText());
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
+            } else {
+                System.out.println("Please fill in all information.");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Please fill in all information.");
+                alert.show();
             }
         });
 
-        button_log_in.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                DBUtils.changeScene(event, "login.fxml", "Log In", null);
-            }
-        });
+        button_log_in.setOnAction(event -> DBUtils.changeScene(event, "login.fxml", "Log In", null));
     }
 }

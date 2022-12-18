@@ -7,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.Objects;
+
 
 public class Studenti extends Application {
 
@@ -46,7 +48,7 @@ public class Studenti extends Application {
     public void start(Stage primaryStage) throws Exception {
         System.out.println(Studenti.STEP() + "Studenti#start (initialize and show primary application stage), thread: " + Thread.currentThread().getName());
 
-        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login.fxml")));
         primaryStage.setTitle("Login");
         primaryStage.setScene(new Scene(root, 1280, 732));
         primaryStage.show();
