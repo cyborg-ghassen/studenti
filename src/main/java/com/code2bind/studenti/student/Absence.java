@@ -22,4 +22,23 @@ public class Absence extends Model {
         type.insert("contenttype", values);
         Permission permission = new Permission("auth_permission", model);
     }
+
+    public Absence() throws SQLException {
+        super("student_absence", createFields());
+        database.alterTable("student_absence", "user_id", "id", "account_user");
+        database.alterTable("student_absence", "material_id", "id", "student_material");
+        values.put("model", "absence");
+        values.put("app_label", "student");
+        type.insert("contenttype", values);
+        Permission permission = new Permission("auth_permission", "absence");
+    }
+
+    private static Dictionary<String, String> createFields() {
+        Dictionary<String, String> fields = new Hashtable<>();
+        fields.put("user_id", "bigint null");
+        fields.put("material_id", "bigint");
+        fields.put("lesson", "varchar(80)");
+        fields.put("date", "date");
+        return fields;
+    }
 }

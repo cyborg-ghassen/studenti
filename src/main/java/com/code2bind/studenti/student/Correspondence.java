@@ -23,4 +23,23 @@ public class Correspondence extends Model {
         type.insert("contenttype", values);
         Permission permission = new Permission("auth_permission", model);
     }
+
+    public Correspondence() throws SQLException {
+        super("student_correspondence", createFields());
+        database.alterTable("student_correspondence", "user_id", "id", "account_user");
+        database.alterTable("student_correspondence", "material_id", "id", "student_material");
+        database.alterTable("student_correspondence", "class_id", "id", "student_class");
+        values.put("model", "correspondence");
+        values.put("app_label", "student");
+        type.insert("contenttype", values);
+        Permission permission = new Permission("auth_permission", "correspondence");
+    }
+
+    private static Dictionary<String, String> createFields() {
+        Dictionary<String, String> fields = new Hashtable<>();
+        fields.put("user_id", "bigint");
+        fields.put("material_id", "bigint");
+        fields.put("class_id", "bigint");
+        return fields;
+    }
 }

@@ -19,6 +19,14 @@ public class Permission extends Model {
     public static Dictionary<String, String> fields = new Hashtable<>();
     public static Dictionary<String, String> values = new Hashtable<>();
 
+    public Permission() throws SQLException {
+        super("auth_permission", createFields());
+        database.alterTable("auth_permission", "contenttype_id", "id", "contenttype");
+        values.put("model", "permission");
+        values.put("app_label", "auth");
+        type.insert("contenttype", values);
+    }
+
     public Permission(String name, String model, Dictionary<String, String> fields) throws SQLException {
         super(name, fields);
         // add foreign key for contenttype
@@ -43,5 +51,13 @@ public class Permission extends Model {
             }
             contenttype.close();
         }
+    }
+
+    private static Dictionary<String, String> createFields() {
+        Dictionary<String, String> fields = new Hashtable<>();
+        fields.put("name", "varchar(80) unique");
+        fields.put("contenttype_id", "bigint");
+        fields.put("codename", "varchar(80)");
+        return fields;
     }
 }

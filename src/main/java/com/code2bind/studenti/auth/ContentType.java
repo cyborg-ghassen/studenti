@@ -20,7 +20,18 @@ public class ContentType extends Model {
 //        values.put("app_label", "initial");
 //        insert(name, values);
     }
+
+    public ContentType() throws SQLException {
+        super("contenttype", createFields());
+    }
     public void insert(String name, Dictionary<String, String> values) throws SQLException {
         database.InsertData(name, values);
+    }
+
+    private static Dictionary<String, String> createFields() {
+        Dictionary<String, String> fields = new Hashtable<>();
+        fields.put("model", "varchar(80) unique");
+        fields.put("app_label", "varchar(80)");
+        return fields;
     }
 }

@@ -43,4 +43,29 @@ public class User extends Model {
         }
         return generatedPassword;
     }
+
+    public User() throws SQLException {
+        super("account_user", createFields());
+        values.put("model", "user");
+        values.put("app_label", "account");
+        type.insert("contenttype", values);
+        Permission permission = new Permission("auth_permission", "user");
+    }
+
+    private static Dictionary<String, String> createFields() {
+        Dictionary<String, String> fields = new Hashtable<>();
+        fields.put("username", "varchar(80) unique");
+        fields.put("password", "varchar(256)");
+        fields.put("first_name", "varchar(80)");
+        fields.put("last_name", "varchar(80)");
+        fields.put("email", "varchar(100)");
+        fields.put("created_at", "datetime DEFAULT CURRENT_TIMESTAMP");
+        fields.put("updated_at", "datetime DEFAULT CURRENT_TIMESTAMP");
+        fields.put("last_login", "datetime DEFAULT CURRENT_TIMESTAMP");
+        fields.put("is_superuser", "tinyint");
+        fields.put("is_active", "tinyint");
+        fields.put("is_staff", "tinyint");
+        fields.put("is_light", "tinyint");
+        return fields;
+    }
 }

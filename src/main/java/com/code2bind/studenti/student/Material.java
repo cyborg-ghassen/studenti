@@ -18,4 +18,18 @@ public class Material extends Model {
         type.insert("contenttype", values);
         Permission permission = new Permission("auth_permission", model);
     }
+
+    public Material() throws SQLException {
+        super("student_material", createFields());
+        values.put("model", "material");
+        values.put("app_label", "student");
+        type.insert("contenttype", values);
+        Permission permission = new Permission("auth_permission", "material");
+    }
+
+    private static Dictionary<String, String> createFields() {
+        Dictionary<String, String> fields = new Hashtable<>();
+        fields.put("label", "varchar(80)");
+        return fields;
+    }
 }

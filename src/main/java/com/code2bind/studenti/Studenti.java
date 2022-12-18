@@ -3,22 +3,15 @@ package com.code2bind.studenti;
 import javafx.application.Application;
 import javafx.application.Preloader;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 
 public class Studenti extends Application {
 
-    private static final double WIDTH = 800;
-    private static final double HEIGHT = 600;
-
     // Just a counter to create some delay while showing preloader.
-    private static final double COUNT_LIMIT = 10000;
+    private static final double COUNT_LIMIT = 1000;
 
     private static int stepCount = 1;
 
@@ -28,7 +21,7 @@ public class Studenti extends Application {
     }
 
     public static void main(String[] args) {
-        System.setProperty("javafx.preloader", MyPreloader.class.getCanonicalName());
+        System.setProperty("javafx.preloader", PreloaderController.class.getCanonicalName());
         launch(args);
     }
 
@@ -42,7 +35,7 @@ public class Studenti extends Application {
         System.out.println(Studenti.STEP() + "Studenti#init (doing some heavy lifting), thread: " + Thread.currentThread().getName());
 
         // Perform some heavy lifting (i.e. database start, check for application updates, etc. )
-
+        DBUtils.prepareDB();
         for (int i = 0; i < COUNT_LIMIT; i++) {
             double progress = (100 * i) / COUNT_LIMIT;
             notifyPreloader(new Preloader.ProgressNotification(progress));
@@ -55,7 +48,6 @@ public class Studenti extends Application {
 
         Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
         primaryStage.setTitle("Login");
-        primaryStage.setResizable(false);
         primaryStage.setScene(new Scene(root, 1280, 732));
         primaryStage.show();
     }

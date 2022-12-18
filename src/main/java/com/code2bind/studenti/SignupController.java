@@ -9,7 +9,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class SignupController implements Initializable {
@@ -34,7 +36,11 @@ public class SignupController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 if (!tf_username.getText().trim().isEmpty() && !tf_password.getText().trim().isEmpty() && !tf_password.getText().trim().isEmpty()){
-                    DBUtils.signUpUser(event, tf_username.getText(), tf_email.getText(), tf_password.getText());
+                    try {
+                        DBUtils.signUpUser(event, tf_username.getText(), tf_email.getText(), tf_password.getText());
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                 } else {
                     System.out.println("Please fill in all information.");
                     Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -47,7 +53,7 @@ public class SignupController implements Initializable {
         button_log_in.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event, "login.fxml", "Log In", null, null);
+                DBUtils.changeScene(event, "login.fxml", "Log In", null);
             }
         });
     }

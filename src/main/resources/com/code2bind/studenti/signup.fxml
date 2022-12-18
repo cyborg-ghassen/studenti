@@ -4,40 +4,42 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.code2bind.studenti.SignupController">
+
+<HBox xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.code2bind.studenti.SignupController">
    <children>
-      <AnchorPane prefHeight="819.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="732.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;">
          <children>
-            <Label style="-fx-font-weight: 800;" text="Sign Up" AnchorPane.bottomAnchor="603.0" AnchorPane.leftAnchor="566.0" AnchorPane.rightAnchor="568.0" AnchorPane.topAnchor="190.0">
+            <Label layoutX="566.0" layoutY="181.0" prefHeight="53.0" prefWidth="146.0" style="-fx-font-weight: 800;" text="Sign Up" AnchorPane.bottomAnchor="498.0" AnchorPane.leftAnchor="566.0" AnchorPane.rightAnchor="568.0" AnchorPane.topAnchor="181.0">
                <font>
-                  <Font name="Gadugi" size="36.0" />
+                  <Font size="36.0" />
                </font>
             </Label>
-            <TextField fx:id="tf_username" promptText="UserName" style="-fx-background-color: #fcfcfc; -fx-border-width: 1px; -fx-border-color: #d7d7d7; -fx-border-style: solid; -fx-border-radius: 15px; -fx-font-weight: 400;" AnchorPane.bottomAnchor="512.0" AnchorPane.leftAnchor="502.0" AnchorPane.rightAnchor="504.0" AnchorPane.topAnchor="275.0">
-               <font>
-                  <Font name="Gadugi" size="16.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="tf_email" promptText="Email address" style="-fx-background-color: #fcfcfc; -fx-border-color: #d7d7d7; -fx-border-radius: 15px;" AnchorPane.bottomAnchor="445.0" AnchorPane.leftAnchor="502.0" AnchorPane.rightAnchor="504.0" AnchorPane.topAnchor="342.0">
+            <TextField fx:id="tf_username" layoutX="502.0" layoutY="288.0" prefHeight="45.0" prefWidth="274.0" promptText="UserName" style="-fx-background-color: #fcfcfc; -fx-border-color: #d7d7d7; -fx-border-radius: 15px;" AnchorPane.leftAnchor="502.0" AnchorPane.rightAnchor="504.0" AnchorPane.topAnchor="288.0">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
-            <PasswordField fx:id="tf_password" promptText="Password" style="-fx-background-color: #fcfcfc; -fx-border-color: #d7d7d7; -fx-border-radius: 15px;" AnchorPane.bottomAnchor="378.0" AnchorPane.leftAnchor="503.0" AnchorPane.rightAnchor="503.0" AnchorPane.topAnchor="409.0">
+            <TextField fx:id="tf_email" layoutX="502.0" layoutY="355.0" prefHeight="45.0" prefWidth="274.0" promptText="Email Address" style="-fx-background-color: #fcfcfc; -fx-border-color: #d7d7d7; -fx-border-radius: 15px;" AnchorPane.leftAnchor="502.0" AnchorPane.rightAnchor="503.6" AnchorPane.topAnchor="355.0">
                <font>
-                  <Font name="Gadugi" size="16.0" />
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="tf_password" layoutX="503.0" layoutY="422.0" prefHeight="46.0" prefWidth="274.0" promptText="Password" style="-fx-background-color: #fcfcfc; -fx-border-color: #d7d7d7; -fx-border-radius: 15px;" AnchorPane.leftAnchor="503.0" AnchorPane.rightAnchor="503.0" AnchorPane.topAnchor="422.0">
+               <font>
+                  <Font name="Century Gothic" size="16.0" />
                </font>
             </PasswordField>
-            <Button fx:id="button_sign_up" mnemonicParsing="false" style="-fx-background-color: #000000; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="SIGN UP" textFill="WHITE" AnchorPane.bottomAnchor="245.0" AnchorPane.leftAnchor="502.0" AnchorPane.rightAnchor="504.0" AnchorPane.topAnchor="543.0">
+            <Button fx:id="button_sign_up" layoutX="503.0" layoutY="509.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="274.0" style="-fx-background-color: #000000; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="SIGNUP" textFill="WHITE" AnchorPane.leftAnchor="503.0" AnchorPane.rightAnchor="503.0" AnchorPane.topAnchor="509.0">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button fx:id="button_log_in" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-radius: 35px;" text="LOGIN" AnchorPane.bottomAnchor="177.0" AnchorPane.leftAnchor="502.0" AnchorPane.rightAnchor="504.0" AnchorPane.topAnchor="611.0">
+            <Button fx:id="button_log_in" layoutX="503.0" layoutY="569.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="274.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="LOGIN" AnchorPane.leftAnchor="503.0" AnchorPane.rightAnchor="503.0" AnchorPane.topAnchor="569.0">
                <font>
-                  <Font name="Gadugi" size="16.0" />
+                  <Font size="16.0" />
                </font>
             </Button>
+            <HBox prefHeight="100.0" prefWidth="200.0" />
          </children>
       </AnchorPane>
    </children>

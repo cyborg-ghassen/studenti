@@ -22,4 +22,22 @@ public class Class extends Model {
         type.insert("contenttype", values);
         Permission permission = new Permission("auth_permission", model);
     }
+
+    public Class() throws SQLException{
+        super("student_class", createFields());
+        database.alterTable("student_class", "user_id", "id", "account_user");
+        values.put("model", "class");
+        values.put("app_label", "student");
+        type.insert("contenttype", values);
+        Permission permission = new Permission("auth_permission", "class");
+    }
+
+    private static Dictionary<String, String> createFields() {
+        Dictionary<String, String> fields = new Hashtable<>();
+        fields.put("user_id", "bigint null");
+        fields.put("label", "varchar(80)");
+        fields.put("level", "varchar(80)");
+        fields.put("field", "varchar(80)");
+        return fields;
+    }
 }

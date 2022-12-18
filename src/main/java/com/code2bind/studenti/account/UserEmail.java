@@ -19,4 +19,20 @@ public class UserEmail extends Model {
         values.put("app_label", "account");
         type.insert("contenttype", values);
     }
+
+    public UserEmail() throws SQLException {
+        super("account_useremail", createFields());
+        database.alterTable("account_useremail", "user_id", "id", "account_user");
+        values.put("model", "user_email");
+        values.put("app_label", "account");
+        type.insert("contenttype", values);
+    }
+
+    private static Dictionary<String, String> createFields() {
+        Dictionary<String, String> fields = new Hashtable<>();
+        fields.put("user_id", "bigint");
+        fields.put("email", "varchar(100)");
+        fields.put("confirmed", "tinyint");
+        return fields;
+    }
 }

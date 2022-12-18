@@ -136,4 +136,9 @@ public class Database {
         statement.execute(query);
         return statement.getResultSet();
     }
+
+    public void close() throws SQLException {
+        c.close();
+        statement.close();
+    }
 }

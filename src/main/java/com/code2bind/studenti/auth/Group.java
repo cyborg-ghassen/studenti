@@ -18,4 +18,18 @@ public class Group extends Model {
         type.insert("contenttype", values);
         Permission permission = new Permission("auth_permission", "group");
     }
+
+    public Group() throws SQLException {
+        super("auth_group", createFields());
+        values.put("model", "group");
+        values.put("app_label", "auth");
+        type.insert("contenttype", values);
+        Permission permission = new Permission("auth_permission", "group");
+    }
+
+    private static Dictionary<String, String> createFields() {
+        Dictionary<String, String> fields = new Hashtable<>();
+        fields.put("name", "varchar(80) unique");
+        return fields;
+    }
 }

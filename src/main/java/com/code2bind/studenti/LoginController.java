@@ -8,7 +8,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
@@ -29,14 +31,18 @@ public class LoginController implements Initializable {
         button_log_in.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.loginUser(event, tf_username.getText(), tf_password.getText());
+                try {
+                    DBUtils.loginUser(event, tf_username.getText(), tf_password.getText());
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
         button_sign_up.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event, "signup.fxml", "Sign Up", null, null);
+                DBUtils.changeScene(event, "signup.fxml", "Sign Up", null);
             }
         });
     }
