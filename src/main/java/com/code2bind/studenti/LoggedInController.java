@@ -1,21 +1,51 @@
 package com.code2bind.studenti;
 
+import com.code2bind.studenti.account.Account;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
 public class LoggedInController implements Initializable {
+    @FXML
+    private TableView<String> users_table;
+
+    @FXML
+    public TableColumn<Account, Integer> account_count;
+
+    @FXML
+    public TableColumn<Account, String> account_username;
+
+    @FXML
+    public TableColumn<Account, String> account_first_name;
+
+    @FXML
+    public TableColumn<Account, String> account_last_name;
+
+    @FXML
+    public TableColumn<Account, String> account_email;
+
+    @FXML
+    public TableColumn<Account, Integer> account_phone;
+
+    @FXML
+    public TableColumn<Account, String> account_joined;
+
+    @FXML
+    public TableColumn<Account, String> account_role;
     @FXML
     private Button button_dashboard;
     @FXML
@@ -46,6 +76,9 @@ public class LoggedInController implements Initializable {
     @FXML
     private Pane absence_pane;
 
+    public LoggedInController() throws SQLException {
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         account_pane.setVisible(false);
@@ -68,6 +101,13 @@ public class LoggedInController implements Initializable {
             absence_pane.setVisible(false);
             material_pane.setVisible(false);
             class_pane.setVisible(false);
+            account_username.setCellValueFactory(new PropertyValueFactory<>("userName"));
+            account_first_name.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+            account_last_name.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+            account_email.setCellValueFactory(new PropertyValueFactory<>("email"));
+            account_phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
+            account_role.setCellValueFactory(new PropertyValueFactory<>("role"));
+            account_joined.setCellValueFactory(new PropertyValueFactory<>("joinedAt"));
         });
 
         button_absence.setOnAction(event -> {
@@ -103,6 +143,7 @@ public class LoggedInController implements Initializable {
             DBUtils.changeScene(s, "login.fxml", "Login", null);
         });
     }
+
 
     public void setUserInformation(String username){
         label_welcome.setText(username + " Hub");

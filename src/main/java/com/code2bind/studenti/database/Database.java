@@ -114,6 +114,14 @@ public class Database {
         return set;
     }
 
+    public ResultSet SelectData(String name, String value, String extra, String condition) throws SQLException {
+        ResultSet set;
+        query = "select " + value + " from " + name + " " + extra + " where " + condition;
+        statement.execute(query);
+        set = statement.getResultSet();
+        return set;
+    }
+
     @Override
     public String toString() {
         return "database connected.";

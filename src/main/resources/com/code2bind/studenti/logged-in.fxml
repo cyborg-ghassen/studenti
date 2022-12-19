@@ -201,10 +201,17 @@
             <Pane fx:id="absence_pane" prefHeight="200.0" prefWidth="200.0" />
             <Pane fx:id="account_pane" layoutX="14.0" layoutY="117.0" prefHeight="614.0" prefWidth="950.0">
                <children>
-                  <TableView fx:id="users_table" editable="true" layoutY="188.0" prefHeight="260.0" prefWidth="950.0" tableMenuButtonVisible="true">
+                  <TableView fx:id="users_table" editable="true" prefHeight="448.0" prefWidth="950.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="#" />
-                      <TableColumn prefWidth="75.0" text="Username" />
+                      <TableColumn fx:id="account_count" prefWidth="75.0" text="#" />
+                      <TableColumn fx:id="account_username" prefWidth="105.19998168945312" text="Username" />
+                        <TableColumn fx:id="account_first_name" prefWidth="128.0" text="First Name" />
+                        <TableColumn fx:id="account_last_name" prefWidth="115.79998779296875" text="Last Name" />
+                        <TableColumn fx:id="account_email" prefWidth="138.0" text="Email" />
+                        <TableColumn fx:id="account_phone" prefWidth="121.99993896484375" text="Phone" />
+                        <TableColumn fx:id="account_joined" prefWidth="125.40008544921875" text="Joined at" />
+                        <TableColumn fx:id="account_role" prefWidth="94.4000244140625" text="Role" />
+                        <TableColumn prefWidth="42.800048828125" />
                     </columns>
                   </TableView>
                </children>

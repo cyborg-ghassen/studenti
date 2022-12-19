@@ -17,4 +17,6 @@ module com.code2bind.studenti {
     opens com.code2bind.studenti.auth to javafx.fxml;
     exports com.code2bind.studenti.exceptions;
     opens com.code2bind.studenti.exceptions to javafx.fxml;
+    exports com.code2bind.studenti.account;
+    opens com.code2bind.studenti.account to javafx.fxml;
 }

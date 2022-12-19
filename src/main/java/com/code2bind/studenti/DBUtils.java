@@ -19,6 +19,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -201,5 +202,18 @@ public class DBUtils {
         }catch (SQLException e){
             System.out.println(e.getMessage());
         }
+    }
+
+    public static ResultSet getAccountInformation() throws SQLException {
+        ResultSet set = null;
+        try{
+            set = database.SelectData("account_user", "*", "inner join " +
+                    "account_usergroups on user_id=account_user.id " +
+                    "inner join auth_group on group_id=account_usergroups.id", "(1=1)");
+            return set;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return set;
     }
 }
