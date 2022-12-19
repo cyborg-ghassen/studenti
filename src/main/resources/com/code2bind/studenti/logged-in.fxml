@@ -203,14 +203,14 @@
                <children>
                   <TableView fx:id="users_table" editable="true" prefHeight="448.0" prefWidth="950.0">
                     <columns>
-                      <TableColumn fx:id="account_id" prefWidth="75.0" text="#" />
-                      <TableColumn fx:id="account_username" prefWidth="105.19998168945312" text="Username" />
-                        <TableColumn fx:id="account_first_name" prefWidth="128.0" text="First Name" />
-                        <TableColumn fx:id="account_last_name" prefWidth="115.79998779296875" text="Last Name" />
-                        <TableColumn fx:id="account_email" prefWidth="138.0" text="Email" />
-                        <TableColumn fx:id="account_phone" prefWidth="121.99993896484375" text="Phone" />
-                        <TableColumn fx:id="account_joined" prefWidth="143.5999755859375" text="Joined at" />
-                        <TableColumn fx:id="account_role" prefWidth="120.4000244140625" text="Role" />
+                      <TableColumn fx:id="id" prefWidth="75.0" text="#" />
+                      <TableColumn fx:id="userName" prefWidth="105.19998168945312" text="Username" />
+                        <TableColumn fx:id="firstName" prefWidth="128.0" text="First Name" />
+                        <TableColumn fx:id="lastName" prefWidth="115.79998779296875" text="Last Name" />
+                        <TableColumn fx:id="email" prefWidth="138.0" text="Email" />
+                        <TableColumn fx:id="phone" prefWidth="121.99993896484375" text="Phone" />
+                        <TableColumn fx:id="joinedAt" prefWidth="143.5999755859375" text="Joined at" />
+                        <TableColumn fx:id="role" prefWidth="120.4000244140625" text="Role" />
                     </columns>
                   </TableView>
                </children>

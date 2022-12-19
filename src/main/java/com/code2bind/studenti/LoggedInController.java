@@ -17,28 +17,28 @@ public class LoggedInController implements Initializable {
     private TableView<Account> users_table;
 
     @FXML
-    public TableColumn<Account, Integer> account_id;
+    public TableColumn<Account, String> id;
 
     @FXML
-    public TableColumn<Account, String> account_username;
+    public TableColumn<Account, String> userName;
 
     @FXML
-    public TableColumn<Account, String> account_first_name;
+    public TableColumn<Account, String> firstName;
 
     @FXML
-    public TableColumn<Account, String> account_last_name;
+    public TableColumn<Account, String> lastName;
 
     @FXML
-    public TableColumn<Account, String> account_email;
+    public TableColumn<Account, String> email;
 
     @FXML
-    public TableColumn<Account, Integer> account_phone;
+    public TableColumn<Account, String> phone;
 
     @FXML
-    public TableColumn<Account, String> account_joined;
+    public TableColumn<Account, String> joinedAt;
 
     @FXML
-    public TableColumn<Account, String> account_role;
+    public TableColumn<Account, String> role;
     @FXML
     private Button button_dashboard;
     @FXML
@@ -105,6 +105,21 @@ public class LoggedInController implements Initializable {
             button_material.setStyle("-fx-background-color: #ffffff");
             button_absence.setStyle("-fx-background-color: #ffffff");
             button_class.setStyle("-fx-background-color: #ffffff");
+
+            id.setCellValueFactory(new PropertyValueFactory<>("id"));
+            userName.setCellValueFactory(new PropertyValueFactory<>("userName"));
+            firstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+            lastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+            email.setCellValueFactory(new PropertyValueFactory<>("email"));
+            phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
+            joinedAt.setCellValueFactory(new PropertyValueFactory<>("joinedAt"));
+            role.setCellValueFactory(new PropertyValueFactory<>("role"));
+
+            try {
+                users_table.setItems(DBUtils.getAccountInformation());
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
         });
 
         button_absence.setOnAction(event -> {
@@ -155,14 +170,7 @@ public class LoggedInController implements Initializable {
             DBUtils.changeScene(s, "login.fxml", "Login", null);
         });
 
-        account_id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        account_username.setCellValueFactory(new PropertyValueFactory<>("userName"));
-        account_first_name.setCellValueFactory(new PropertyValueFactory<>("firstName"));
-        account_last_name.setCellValueFactory(new PropertyValueFactory<>("lastName"));
-        account_email.setCellValueFactory(new PropertyValueFactory<>("email"));
-        account_phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
-        account_role.setCellValueFactory(new PropertyValueFactory<>("role"));
-        account_joined.setCellValueFactory(new PropertyValueFactory<>("joinedAt"));
+
     }
 
 

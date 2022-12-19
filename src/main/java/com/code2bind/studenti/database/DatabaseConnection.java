@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-class DatabaseConnection {
+public class DatabaseConnection {
     Dotenv dotenv = Dotenv.load();
     private final String user = dotenv.get("MYSQL_USER");
     private final String password = dotenv.get("MYSQL_PASSWORD");

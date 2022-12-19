@@ -6,6 +6,7 @@ import com.code2bind.studenti.auth.Group;
 import com.code2bind.studenti.auth.GroupPermissions;
 import com.code2bind.studenti.auth.Permission;
 import com.code2bind.studenti.database.Database;
+import com.code2bind.studenti.database.DatabaseConnection;
 import com.code2bind.studenti.student.Absence;
 import com.code2bind.studenti.student.Class;
 import com.code2bind.studenti.student.Correspondence;
@@ -22,8 +23,7 @@ import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
@@ -199,40 +199,35 @@ public class DBUtils {
         }
     }
 
-    public static void getAccountInformation(TableView<Account> tableView) throws SQLException {
-        Database database = new Database();
+    public static ObservableList<Account> getAccountInformation() throws SQLException {
+        DatabaseConnection connection = new DatabaseConnection();
+        ObservableList<Account> data = null;
         try (
-                ResultSet resultSet = database.SelectData("account_user", "account_user.id, " +
+                Connection connection1 = connection.connect();
+                PreparedStatement statement = connection1.prepareStatement("select account_user.id, " +
                         "account_user.username, account_user.first_name, account_user.last_name, account_user.email, " +
-                        "account_user.number, account_user.created_at, auth_group.name", "" +
+                        "account_user.number, account_user.created_at, auth_group.name from account_user " +
                         "inner join account_usergroups on account_user.id=account_usergroups.user_id" +
-                        " inner join auth_group on auth_group.id=account_usergroups.group_id", "(1=1)")
+                        " inner join auth_group on auth_group.id=account_usergroups.group_id");
         ) {
-            ObservableList<Account> data = FXCollections.observableArrayList(dataBaseArrayList(resultSet));
-            tableView.setItems(data);
-        } catch (Exception e){
+            ResultSet resultSet = statement.executeQuery();
+            data = FXCollections.observableArrayList();
+            while (resultSet.next()) {
+                data.add(new Account(
+                        resultSet.getString("id"),
+                        resultSet.getString("username"),
+                        resultSet.getString("first_name"),
+                        resultSet.getString("last_name"),
+                        resultSet.getString("email"),
+                        String.valueOf(resultSet.getInt("number")),
+                        String.valueOf(resultSet.getDate("created_at")),
+                        resultSet.getString("name")
+                ));
+            }
+        } catch (Exception e) {
             e.printStackTrace();
-        }
-        finally {
-            database.close();
-        }
-    }
-
-    //extracting data from ResulSet to ArrayList
-    private static ArrayList<Account> dataBaseArrayList(ResultSet resultSet) throws SQLException {
-        ArrayList<Account> data =  new ArrayList<>();
-        while (resultSet.next()) {
-            Account account = new Account();
-            account.setPhone(resultSet.getInt("number"));
-            account.setId(resultSet.getInt("id"));
-            account.setUserName(resultSet.getString("username"));
-            account.setFirstName(resultSet.getString("first_name"));
-            account.setLastName(resultSet.getString("last_name"));
-            account.setEmail(resultSet.getString("email"));
-            account.setJoinedAt(resultSet.getString("created_at"));
-            account.setRole(resultSet.getString("name"));
-            data.add(account);
         }
         return data;
     }
+
 }

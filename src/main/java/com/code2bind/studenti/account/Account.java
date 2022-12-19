@@ -1,11 +1,10 @@
 package com.code2bind.studenti.account;
 
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Account {
-    private SimpleIntegerProperty id;
-    private SimpleIntegerProperty phone;
+    private SimpleStringProperty id;
+    private SimpleStringProperty phone;
     private SimpleStringProperty firstName;
     private SimpleStringProperty lastName;
     private SimpleStringProperty userName;
@@ -13,8 +12,9 @@ public class Account {
     private SimpleStringProperty role;
     private SimpleStringProperty joinedAt;
 
-    public Account(Integer phone, String firstName, String lastName, String userName, String email, String role, String joined){
-        this.phone = new SimpleIntegerProperty(phone);
+    public Account(String id, String userName,  String firstName, String lastName, String email, String phone, String joined, String role){
+        this.id = new SimpleStringProperty(id);
+        this.phone = new SimpleStringProperty(phone);
         this.userName = new SimpleStringProperty(userName);
         this.firstName = new SimpleStringProperty(firstName);
         this.lastName = new SimpleStringProperty(lastName);
@@ -23,11 +23,11 @@ public class Account {
         this.joinedAt = new SimpleStringProperty(joined);
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id.set(id);
     }
 
-    public int getId() {
+    public String getId() {
         return id.get();
     }
 
@@ -35,11 +35,11 @@ public class Account {
 
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone.get();
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone.set(phone);
     }
 
