@@ -3,9 +3,8 @@ package com.code2bind.studenti.account;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
-import java.text.SimpleDateFormat;
-
 public class Account {
+    private SimpleIntegerProperty id;
     private SimpleIntegerProperty phone;
     private SimpleStringProperty firstName;
     private SimpleStringProperty lastName;
@@ -22,6 +21,18 @@ public class Account {
         this.email = new SimpleStringProperty(email);
         this.role = new SimpleStringProperty(role);
         this.joinedAt = new SimpleStringProperty(joined);
+    }
+
+    public void setId(int id) {
+        this.id.set(id);
+    }
+
+    public int getId() {
+        return id.get();
+    }
+
+    public Account() {
+
     }
 
     public int getPhone() {

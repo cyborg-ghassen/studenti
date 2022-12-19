@@ -18,17 +18,10 @@ public class Database {
         }
     }
 
-    static PreparedStatement statement;
-
-    static {
-        try {
-            statement = c.prepareStatement(query);
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
+    public Database() throws SQLException {
+        c.close();
+        c = connection.connect();
     }
-
-    public Database() throws SQLException {}
 
     public ResultSet createTable(String tableName, Dictionary<String, String> fields) throws SQLException {
         ResultSet set;
@@ -40,6 +33,7 @@ public class Database {
             query = query.concat(el + " " + fields.get(el) + ",");
         }
         query = query.concat("constraint " + tableName + "_pk primary key (id))");
+        PreparedStatement statement = c.prepareStatement(query);
         statement.execute(query);
         set = statement.getResultSet();
         return set;
@@ -47,17 +41,20 @@ public class Database {
 
     public void alterTable(String name, String field, int size) throws SQLException {
         query = "alter table " + name + " add " + field + " varchar(" + size + ")";
+        PreparedStatement statement = c.prepareStatement(query);
         statement.execute(query);
     }
 
     public void alterTable(String name, String field) throws SQLException {
         query = "alter table " + name + " add " + field + " int";
+        PreparedStatement statement = c.prepareStatement(query);
         statement.execute(query);
     }
 
     public void alterTable(String name, String field, boolean bool) throws SQLException {
         if (bool){
             query = "alter table " + name + " add " + field + " tinyint";
+            PreparedStatement statement = c.prepareStatement(query);
             statement.execute(query);
         }
     }
@@ -65,6 +62,7 @@ public class Database {
     public void alterTable(String name, String field, String key, String reference) throws SQLException {
         query = "alter table " + name + " add constraint " + name + "_" + reference + "_fk " +
                 "foreign key (" + field + ") references " + reference + " (" + key + ")";
+        PreparedStatement statement = c.prepareStatement(query);
         statement.execute(query);
     }
 
@@ -87,12 +85,14 @@ public class Database {
                 query = query.concat("'" + values.get(el) + "'");
         }
         query = query.concat(")");
+        PreparedStatement statement = c.prepareStatement(query);
         statement.execute(query);
     }
 
     public ResultSet SelectData(String name) throws SQLException {
         ResultSet set;
         query = "select * from " + name;
+        PreparedStatement statement = c.prepareStatement(query);
         statement.execute(query);
         set = statement.getResultSet();
         return set;
@@ -101,6 +101,7 @@ public class Database {
     public ResultSet SelectData(String name, String value) throws SQLException {
         ResultSet set;
         query = "select " + value + " from " + name;
+        PreparedStatement statement = c.prepareStatement(query);
         statement.execute(query);
         set = statement.getResultSet();
         return set;
@@ -109,6 +110,7 @@ public class Database {
     public ResultSet SelectData(String name, String value, String condition) throws SQLException {
         ResultSet set;
         query = "select " + value + " from " + name + " where " + condition;
+        PreparedStatement statement = c.prepareStatement(query);
         statement.execute(query);
         set = statement.getResultSet();
         return set;
@@ -117,6 +119,7 @@ public class Database {
     public ResultSet SelectData(String name, String value, String extra, String condition) throws SQLException {
         ResultSet set;
         query = "select " + value + " from " + name + " " + extra + " where " + condition;
+        PreparedStatement statement = c.prepareStatement(query);
         statement.execute(query);
         set = statement.getResultSet();
         return set;
@@ -141,13 +144,13 @@ public class Database {
 
     public ResultSet updateData(String tableName, String field, String value, String condition) throws SQLException {
         query = "update " + tableName + " set " + field + "=" + value + " where " + condition;
+        PreparedStatement statement = c.prepareStatement(query);
         statement.execute(query);
         return statement.getResultSet();
     }
 
     public void close() throws SQLException {
         c.close();
-        statement.close();
         query = "";
     }
 }

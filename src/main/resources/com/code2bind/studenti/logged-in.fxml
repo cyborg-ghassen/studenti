@@ -52,7 +52,7 @@
             </MenuButton>
             <VBox layoutX="27.0" layoutY="224.0" prefHeight="426.0" prefWidth="252.0">
                <children>
-                  <Button fx:id="button_dashboard" mnemonicParsing="false" prefHeight="48.0" prefWidth="252.0" style="-fx-background-color: #B7B7B71A; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Dashboard">
+                  <Button fx:id="button_dashboard" mnemonicParsing="false" prefHeight="48.0" prefWidth="252.0" style="-fx-background-color: #ffffff; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Dashboard">
                      <font>
                         <Font name="Gadugi" size="18.0" />
                      </font>
@@ -60,7 +60,7 @@
                         <Insets top="30.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="button_account" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="252.0" style="-fx-background-color: #B7B7B71A; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Accounts">
+                  <Button fx:id="button_account" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="252.0" style="-fx-background-color: #ffffff; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Accounts">
                      <font>
                         <Font name="Gadugi" size="18.0" />
                      </font>
@@ -68,7 +68,7 @@
                         <Insets top="30.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="button_class" layoutX="10.0" layoutY="58.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="252.0" style="-fx-background-color: #B7B7B71A; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Class">
+                  <Button fx:id="button_class" layoutX="10.0" layoutY="58.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="252.0" style="-fx-background-color: #ffffff; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Class">
                      <font>
                         <Font name="Gadugi" size="18.0" />
                      </font>
@@ -76,7 +76,7 @@
                         <Insets top="30.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="button_material" layoutX="10.0" layoutY="106.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="252.0" style="-fx-background-color: #B7B7B71A; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Material">
+                  <Button fx:id="button_material" layoutX="10.0" layoutY="106.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="252.0" style="-fx-background-color: #ffffff; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Material">
                      <font>
                         <Font name="Gadugi" size="18.0" />
                      </font>
@@ -84,7 +84,7 @@
                         <Insets top="30.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="button_absence" layoutX="10.0" layoutY="154.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="252.0" style="-fx-background-color: #B7B7B71A; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Absence">
+                  <Button fx:id="button_absence" layoutX="10.0" layoutY="154.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="252.0" style="-fx-background-color: #ffffff; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Absence">
                      <font>
                         <Font name="Gadugi" size="18.0" />
                      </font>
@@ -203,15 +203,14 @@
                <children>
                   <TableView fx:id="users_table" editable="true" prefHeight="448.0" prefWidth="950.0">
                     <columns>
-                      <TableColumn fx:id="account_count" prefWidth="75.0" text="#" />
+                      <TableColumn fx:id="account_id" prefWidth="75.0" text="#" />
                       <TableColumn fx:id="account_username" prefWidth="105.19998168945312" text="Username" />
                         <TableColumn fx:id="account_first_name" prefWidth="128.0" text="First Name" />
                         <TableColumn fx:id="account_last_name" prefWidth="115.79998779296875" text="Last Name" />
                         <TableColumn fx:id="account_email" prefWidth="138.0" text="Email" />
                         <TableColumn fx:id="account_phone" prefWidth="121.99993896484375" text="Phone" />
-                        <TableColumn fx:id="account_joined" prefWidth="125.40008544921875" text="Joined at" />
-                        <TableColumn fx:id="account_role" prefWidth="94.4000244140625" text="Role" />
-                        <TableColumn prefWidth="42.800048828125" />
+                        <TableColumn fx:id="account_joined" prefWidth="143.5999755859375" text="Joined at" />
+                        <TableColumn fx:id="account_role" prefWidth="120.4000244140625" text="Role" />
                     </columns>
                   </TableView>
                </children>

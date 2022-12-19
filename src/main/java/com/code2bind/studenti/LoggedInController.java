@@ -1,10 +1,6 @@
 package com.code2bind.studenti;
 
 import com.code2bind.studenti.account.Account;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -12,19 +8,16 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 
-import java.io.IOException;
 import java.net.URL;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
 public class LoggedInController implements Initializable {
     @FXML
-    private TableView<String> users_table;
+    private TableView<Account> users_table;
 
     @FXML
-    public TableColumn<Account, Integer> account_count;
+    public TableColumn<Account, Integer> account_id;
 
     @FXML
     public TableColumn<Account, String> account_username;
@@ -86,6 +79,7 @@ public class LoggedInController implements Initializable {
         material_pane.setVisible(false);
         absence_pane.setVisible(false);
         dashboard_pane.setVisible(true);
+        button_dashboard.setStyle("-fx-background-color: #B7B7B71A; -fx-background-radius: 35px; -fx-border-radius: 35px");
 
         button_dashboard.setOnAction(event -> {
             account_pane.setVisible(false);
@@ -93,6 +87,11 @@ public class LoggedInController implements Initializable {
             absence_pane.setVisible(false);
             material_pane.setVisible(false);
             class_pane.setVisible(false);
+            button_dashboard.setStyle("-fx-background-color: #B7B7B71A; -fx-background-radius: 35px; -fx-border-radius: 35px");
+            button_account.setStyle("-fx-background-color: #ffffff");
+            button_material.setStyle("-fx-background-color: #ffffff");
+            button_absence.setStyle("-fx-background-color: #ffffff");
+            button_class.setStyle("-fx-background-color: #ffffff");
         });
 
         button_account.setOnAction(event -> {
@@ -101,13 +100,11 @@ public class LoggedInController implements Initializable {
             absence_pane.setVisible(false);
             material_pane.setVisible(false);
             class_pane.setVisible(false);
-            account_username.setCellValueFactory(new PropertyValueFactory<>("userName"));
-            account_first_name.setCellValueFactory(new PropertyValueFactory<>("firstName"));
-            account_last_name.setCellValueFactory(new PropertyValueFactory<>("lastName"));
-            account_email.setCellValueFactory(new PropertyValueFactory<>("email"));
-            account_phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
-            account_role.setCellValueFactory(new PropertyValueFactory<>("role"));
-            account_joined.setCellValueFactory(new PropertyValueFactory<>("joinedAt"));
+            button_account.setStyle("-fx-background-color: #B7B7B71A; -fx-background-radius: 35px; -fx-border-radius: 35px");
+            button_dashboard.setStyle("-fx-background-color: #ffffff");
+            button_material.setStyle("-fx-background-color: #ffffff");
+            button_absence.setStyle("-fx-background-color: #ffffff");
+            button_class.setStyle("-fx-background-color: #ffffff");
         });
 
         button_absence.setOnAction(event -> {
@@ -116,6 +113,11 @@ public class LoggedInController implements Initializable {
             absence_pane.setVisible(true);
             material_pane.setVisible(false);
             class_pane.setVisible(false);
+            button_absence.setStyle("-fx-background-color: #B7B7B71A; -fx-background-radius: 35px; -fx-border-radius: 35px");
+            button_dashboard.setStyle("-fx-background-color: #ffffff");
+            button_material.setStyle("-fx-background-color: #ffffff");
+            button_account.setStyle("-fx-background-color: #ffffff");
+            button_class.setStyle("-fx-background-color: #ffffff");
         });
 
         button_class.setOnAction(event -> {
@@ -124,6 +126,11 @@ public class LoggedInController implements Initializable {
             absence_pane.setVisible(false);
             material_pane.setVisible(false);
             class_pane.setVisible(true);
+            button_class.setStyle("-fx-background-color: #B7B7B71A; -fx-background-radius: 35px; -fx-border-radius: 35px");
+            button_dashboard.setStyle("-fx-background-color: #ffffff");
+            button_material.setStyle("-fx-background-color: #ffffff");
+            button_absence.setStyle("-fx-background-color: #ffffff");
+            button_account.setStyle("-fx-background-color: #ffffff");
         });
 
         button_material.setOnAction(event -> {
@@ -132,6 +139,11 @@ public class LoggedInController implements Initializable {
             absence_pane.setVisible(false);
             material_pane.setVisible(true);
             class_pane.setVisible(false);
+            button_material.setStyle("-fx-background-color: #B7B7B71A; -fx-background-radius: 35px; -fx-border-radius: 35px");
+            button_dashboard.setStyle("-fx-background-color: #ffffff");
+            button_account.setStyle("-fx-background-color: #ffffff");
+            button_absence.setStyle("-fx-background-color: #ffffff");
+            button_class.setStyle("-fx-background-color: #ffffff");
         });
 
         button_logout.setOnAction(event -> {
@@ -142,6 +154,15 @@ public class LoggedInController implements Initializable {
             Scene s = m.getParentPopup().getOwnerWindow().getScene();
             DBUtils.changeScene(s, "login.fxml", "Login", null);
         });
+
+        account_id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        account_username.setCellValueFactory(new PropertyValueFactory<>("userName"));
+        account_first_name.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+        account_last_name.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+        account_email.setCellValueFactory(new PropertyValueFactory<>("email"));
+        account_phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
+        account_role.setCellValueFactory(new PropertyValueFactory<>("role"));
+        account_joined.setCellValueFactory(new PropertyValueFactory<>("joinedAt"));
     }
 
 
