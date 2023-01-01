@@ -1,5 +1,6 @@
 package com.code2bind.studenti;
 
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.application.Application;
 import javafx.application.Preloader;
 import javafx.fxml.FXMLLoader;

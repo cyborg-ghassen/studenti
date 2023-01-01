@@ -215,12 +215,10 @@ public class DBUtils {
             while (resultSet.next()) {
                 data.add(new Account(
                         resultSet.getString("id"),
-                        resultSet.getString("username"),
                         resultSet.getString("first_name"),
                         resultSet.getString("last_name"),
                         resultSet.getString("email"),
                         String.valueOf(resultSet.getInt("number")),
-                        String.valueOf(resultSet.getDate("created_at")),
                         resultSet.getString("name")
                 ));
             }

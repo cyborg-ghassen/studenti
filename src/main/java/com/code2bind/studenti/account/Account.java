@@ -12,15 +12,13 @@ public class Account {
     private SimpleStringProperty role;
     private SimpleStringProperty joinedAt;
 
-    public Account(String id, String userName,  String firstName, String lastName, String email, String phone, String joined, String role){
+    public Account(String id, String firstName, String lastName, String email, String phone, String role){
         this.id = new SimpleStringProperty(id);
         this.phone = new SimpleStringProperty(phone);
-        this.userName = new SimpleStringProperty(userName);
         this.firstName = new SimpleStringProperty(firstName);
         this.lastName = new SimpleStringProperty(lastName);
         this.email = new SimpleStringProperty(email);
         this.role = new SimpleStringProperty(role);
-        this.joinedAt = new SimpleStringProperty(joined);
     }
 
     public void setId(String id) {

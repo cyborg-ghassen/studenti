@@ -13,14 +13,12 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class LoggedInController implements Initializable {
+    public Label label_fullname;
     @FXML
     private TableView<Account> users_table;
 
     @FXML
     public TableColumn<Account, String> id;
-
-    @FXML
-    public TableColumn<Account, String> userName;
 
     @FXML
     public TableColumn<Account, String> firstName;
@@ -33,9 +31,6 @@ public class LoggedInController implements Initializable {
 
     @FXML
     public TableColumn<Account, String> phone;
-
-    @FXML
-    public TableColumn<Account, String> joinedAt;
 
     @FXML
     public TableColumn<Account, String> role;
@@ -107,12 +102,10 @@ public class LoggedInController implements Initializable {
             button_class.setStyle("-fx-background-color: #ffffff");
 
             id.setCellValueFactory(new PropertyValueFactory<>("id"));
-            userName.setCellValueFactory(new PropertyValueFactory<>("userName"));
             firstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
             lastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
             email.setCellValueFactory(new PropertyValueFactory<>("email"));
             phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
-            joinedAt.setCellValueFactory(new PropertyValueFactory<>("joinedAt"));
             role.setCellValueFactory(new PropertyValueFactory<>("role"));
 
             try {
