@@ -22,7 +22,7 @@ public class User extends Model {
         Permission permission = new Permission("auth_permission", model);
     }
 
-    public String make_password(String password){
+    public static String make_password(String password){
         return get_SHA_256_SecurePassword(password);
     }
 
@@ -59,6 +59,7 @@ public class User extends Model {
         fields.put("first_name", "varchar(80)");
         fields.put("last_name", "varchar(80)");
         fields.put("email", "varchar(100)");
+        fields.put("number", "int");
         fields.put("created_at", "datetime DEFAULT CURRENT_TIMESTAMP");
         fields.put("updated_at", "datetime DEFAULT CURRENT_TIMESTAMP");
         fields.put("last_login", "datetime DEFAULT CURRENT_TIMESTAMP");

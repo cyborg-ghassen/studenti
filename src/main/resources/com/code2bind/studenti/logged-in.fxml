@@ -16,7 +16,7 @@
          <children>
             <Group layoutX="-4.099999904632568" layoutY="83.9000015258789">
                <children>
-                  <Button fx:id="button_class" layoutX="4.0" layoutY="151.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="265.0" style="-fx-background-color: #ECEEF6; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Class" textFill="#131313">
+                  <Button fx:id="button_class" layoutX="4.0" layoutY="110.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="265.0" style="-fx-background-color: #ECEEF6; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Class" textFill="#131313">
                      <font>
                         <Font name="Century Gothic" size="20.0" />
                      </font>
@@ -27,7 +27,7 @@
 
                      </graphic>
                   </Button>
-                  <Button fx:id="button_dashboard" layoutX="4.099999904632568" layoutY="3.0999984741210938" mnemonicParsing="false" prefHeight="50.0" prefWidth="265.0" style="-fx-background-color: rgba(183, 183, 183, 0.5); -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Dashboard">
+                  <Button fx:id="button_dashboard" layoutX="4.099999904632568" layoutY="-37.900001525878906" mnemonicParsing="false" prefHeight="50.0" prefWidth="265.0" style="-fx-background-color: rgba(183, 183, 183, 0.5); -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Dashboard">
                      <font>
                         <Font name="Century Gothic" size="20.0" />
                      </font>
@@ -38,7 +38,7 @@
 
                      </graphic>
                   </Button>
-                  <Button fx:id="button_account" layoutX="4.099999904632568" layoutY="74.5" mnemonicParsing="false" prefHeight="50.0" prefWidth="265.0" style="-fx-background-color: #ECEEF6; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Account">
+                  <Button fx:id="button_account" layoutX="4.099999904632568" layoutY="33.5" mnemonicParsing="false" prefHeight="50.0" prefWidth="265.0" style="-fx-background-color: #ECEEF6; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Account">
                      <font>
                         <Font name="Century Gothic" size="20.0" />
                      </font>
@@ -49,7 +49,7 @@
 
                      </graphic>
                   </Button>
-                  <Button fx:id="button_absence" layoutX="4.0" layoutY="225.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="265.0" style="-fx-background-color: #ECEEF6; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Absence" textFill="#131313">
+                  <Button fx:id="button_absence" layoutX="4.0" layoutY="184.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="265.0" style="-fx-background-color: #ECEEF6; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Absence" textFill="#131313">
                      <font>
                         <Font name="Century Gothic" size="20.0" />
                      </font>
@@ -60,7 +60,7 @@
 
                      </graphic>
                   </Button>
-                  <Button fx:id="button_material" layoutX="4.0" layoutY="299.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="265.0" style="-fx-background-color: #ECEEF6; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Material" textFill="#131313">
+                  <Button fx:id="button_material" layoutX="4.0" layoutY="258.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="265.0" style="-fx-background-color: #ECEEF6; -fx-background-radius: 35px; -fx-border-radius: 35px;" text="Material" textFill="#131313">
                      <font>
                         <Font name="Century Gothic" size="20.0" />
                      </font>
@@ -71,11 +71,19 @@
 
                      </graphic>
                   </Button>
-                  <FontAwesomeIconView glyphName="USER" layoutX="55.0" layoutY="105.0" size="14" />
-                  <FontAwesomeIconView glyphName="PIE_CHART" layoutX="55.0" layoutY="35.0" size="14" />
-                  <FontAwesomeIconView glyphName="UNIVERSITY" layoutX="55.0" layoutY="182.0" size="14" />
-                  <FontAwesomeIconView glyphName="USER_SECRET" layoutX="55.0" layoutY="256.0" size="14" />
-                  <FontAwesomeIconView glyphName="GRADUATION_CAP" layoutX="55.0" layoutY="330.0" size="14" />
+                  <FontAwesomeIconView fx:id="icon_user" glyphName="USER" layoutX="55.0" layoutY="64.0" size="14" />
+                  <FontAwesomeIconView fx:id="icon_dashboard" glyphName="PIE_CHART" layoutX="55.0" layoutY="-6.0" size="14" />
+                  <FontAwesomeIconView fx:id="icon_class" glyphName="UNIVERSITY" layoutX="55.0" layoutY="141.0" size="14" />
+                  <FontAwesomeIconView fx:id="icon_absence" glyphName="USER_SECRET" layoutX="55.0" layoutY="215.0" size="14" />
+                  <FontAwesomeIconView fx:id="icon_material" glyphName="GRADUATION_CAP" layoutX="55.0" layoutY="289.0" size="14" />
+                  <Button fx:id="button_correspondence" layoutX="4.0" layoutY="331.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="265.0" style="-fx-background-color: #ECEEF6; -fx-background-radius: 35px;" text="Correspondence">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                </children>
             </Group>
          </children>
@@ -114,10 +122,10 @@
                </font>
             </Label>
             <MenuButton fx:id="menu_settings" layoutX="221.0" layoutY="17.0" mnemonicParsing="false" popupSide="TOP" prefHeight="36.0" prefWidth="59.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="221.0" AnchorPane.topAnchor="17.0">
-              <items>
-                <MenuItem fx:id="profile_link" mnemonicParsing="false" text="Profile" />
-                <MenuItem fx:id="button_logout" mnemonicParsing="false" text="Logout" />
-              </items>
+               <items>
+                  <MenuItem fx:id="profile_link" mnemonicParsing="false" text="Profile" />
+                  <MenuItem fx:id="button_logout" mnemonicParsing="false" text="Logout" />
+               </items>
                <graphic>
 
                </graphic>
@@ -133,98 +141,245 @@
       </AnchorPane>
    </bottom>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="539.0" prefWidth="1014.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane fx:id="class_pane" layoutX="10.0" layoutY="10.0" prefHeight="510.0" prefWidth="1011.0" AnchorPane.leftAnchor="21.0">
+            <AnchorPane fx:id="account_pane" prefHeight="510.0" prefWidth="995.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="21.0">
                <children>
-                  <TableView fx:id="users_table1" layoutY="51.0" prefHeight="458.0" prefWidth="1010.0">
-                     <columns>
-                        <TableColumn fx:id="id1" prefWidth="75.0" text="#" />
-                        <TableColumn fx:id="userName1" prefWidth="110.39999389648438" text="Usename" />
-                        <TableColumn fx:id="firstName1" prefWidth="111.19998168945312" text="First name" />
-                        <TableColumn fx:id="lastName1" prefWidth="112.800048828125" text="Last name" />
-                        <TableColumn fx:id="email1" prefWidth="107.20001220703125" text="Email" />
-                        <TableColumn fx:id="phone1" prefWidth="141.60003662109375" text="Phone" />
-                        <TableColumn fx:id="joinedAt1" prefWidth="142.39996337890625" text="Joined at" />
-                        <TableColumn fx:id="role1" prefWidth="209.60003662109375" text="Role" />
-                     </columns>
-                  </TableView>
+                  <HBox prefHeight="510.0" prefWidth="1003.0">
+                     <children>
+                        <TableView fx:id="users_table" prefHeight="510.0" prefWidth="621.0">
+                           <columns>
+                              <TableColumn fx:id="id" prefWidth="31.199981689453125" text="#" />
+                              <TableColumn fx:id="firstName" prefWidth="95.99999618530273" text="First name" />
+                              <TableColumn fx:id="lastName" prefWidth="102.4000244140625" text="Last name" />
+                              <TableColumn fx:id="email" prefWidth="100.80000305175781" text="Email" />
+                              <TableColumn fx:id="phone" prefWidth="110.800048828125" text="Phone" />
+                              <TableColumn fx:id="role" prefWidth="130.00006103515625" text="Role" />
+                              <TableColumn prefWidth="47.99997558593748" />
+                           </columns>
+                        </TableView>
+                        <Pane fx:id="accountForm" prefHeight="510.0" prefWidth="382.0">
+                           <children>
+                              <Label layoutX="59.0" layoutY="35.0" text="Account">
+                                 <font>
+                                    <Font name="Gadugi" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tf_username" layoutX="14.0" layoutY="74.0" prefHeight="25.0" prefWidth="166.0" promptText="Usename" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 50px; -fx-border-radius: 50px;">
+                                 <font>
+                                    <Font name="Gadugi" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tf_email" layoutX="202.0" layoutY="74.0" prefHeight="25.0" prefWidth="166.0" promptText="Email" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 50px; -fx-border-radius: 50px;">
+                                 <font>
+                                    <Font name="Gadugi" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tf_first_name" layoutX="14.0" layoutY="124.0" prefHeight="25.0" prefWidth="166.0" promptText="First name" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 50px; -fx-border-radius: 50px;">
+                                 <font>
+                                    <Font name="Gadugi" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tf_last_name" layoutX="202.0" layoutY="124.0" prefHeight="25.0" prefWidth="166.0" promptText="Last name" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 50px; -fx-border-radius: 50px;">
+                                 <font>
+                                    <Font name="Gadugi" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tf_phone" layoutX="14.0" layoutY="171.0" prefHeight="25.0" prefWidth="166.0" promptText="Phone" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 50px; -fx-border-radius: 50px;">
+                                 <font>
+                                    <Font name="Gadugi" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <ListView fx:id="lv_groups" layoutX="91.0" layoutY="229.0" prefHeight="148.0" prefWidth="200.0" />
+                              <Button fx:id="btn_account_save" layoutX="232.0" layoutY="423.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="84.0" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 15px;" text="Save">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="absence_pane" layoutX="20.0" layoutY="20.0" prefHeight="510.0" prefWidth="1011.0" AnchorPane.leftAnchor="21.0">
+            <AnchorPane fx:id="class_pane" layoutX="20.0" layoutY="-3.0" prefHeight="510.0" prefWidth="1011.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="20.0">
                <children>
-                  <TableView fx:id="users_table11" layoutY="51.0" prefHeight="458.0" prefWidth="1010.0">
-                     <columns>
-                        <TableColumn fx:id="id11" prefWidth="75.0" text="#" />
-                        <TableColumn fx:id="userName11" prefWidth="110.39999389648438" text="Usename" />
-                        <TableColumn fx:id="firstName11" prefWidth="111.19998168945312" text="First name" />
-                        <TableColumn fx:id="lastName11" prefWidth="112.800048828125" text="Last name" />
-                        <TableColumn fx:id="email11" prefWidth="107.20001220703125" text="Email" />
-                        <TableColumn fx:id="phone11" prefWidth="141.60003662109375" text="Phone" />
-                        <TableColumn fx:id="joinedAt11" prefWidth="142.39996337890625" text="Joined at" />
-                        <TableColumn fx:id="role11" prefWidth="209.60003662109375" text="Role" />
-                     </columns>
-                  </TableView>
+                  <HBox layoutX="-1.0" layoutY="3.0" prefHeight="539.0" prefWidth="1005.0">
+                     <children>
+                        <TableView fx:id="class_table" prefHeight="458.0" prefWidth="624.0">
+                           <columns>
+                              <TableColumn fx:id="classId" prefWidth="63.0" text="#" />
+                              <TableColumn fx:id="label" prefWidth="186.0" text="Label" />
+                              <TableColumn fx:id="field" prefWidth="205.0" text="Field" />
+                              <TableColumn fx:id="level" prefWidth="169.0" text="Level" />
+                           </columns>
+                        </TableView>
+                        <Pane fx:id="classForm" prefHeight="510.0" prefWidth="382.0">
+                           <children>
+                              <Label layoutX="59.0" layoutY="35.0" text="Class">
+                                 <font>
+                                    <Font name="Gadugi" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tf_label" layoutX="12.0" layoutY="74.0" prefHeight="39.0" prefWidth="356.0" promptText="Label" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 50px; -fx-border-radius: 50px;">
+                                 <font>
+                                    <Font name="Gadugi" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tf_field" layoutX="14.0" layoutY="140.0" prefHeight="37.0" prefWidth="166.0" promptText="Field" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 50px; -fx-border-radius: 50px;">
+                                 <font>
+                                    <Font name="Gadugi" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tf_level" layoutX="202.0" layoutY="140.0" prefHeight="36.0" prefWidth="166.0" promptText="Level" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 50px; -fx-border-radius: 50px;">
+                                 <font>
+                                    <Font name="Gadugi" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="btn_class_save" layoutX="154.0" layoutY="258.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="74.0" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 15px;" text="Save">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="material_pane" layoutX="30.0" layoutY="30.0" prefHeight="510.0" prefWidth="1011.0" AnchorPane.leftAnchor="21.0">
+            <AnchorPane fx:id="material_pane" layoutX="19.0" layoutY="2.0" prefHeight="510.0" prefWidth="1011.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="19.0">
                <children>
-                  <TableView fx:id="users_table111" layoutY="51.0" prefHeight="458.0" prefWidth="1010.0">
-                     <columns>
-                        <TableColumn fx:id="id111" prefWidth="75.0" text="#" />
-                        <TableColumn fx:id="userName111" prefWidth="110.39999389648438" text="Usename" />
-                        <TableColumn fx:id="firstName111" prefWidth="111.19998168945312" text="First name" />
-                        <TableColumn fx:id="lastName111" prefWidth="112.800048828125" text="Last name" />
-                        <TableColumn fx:id="email111" prefWidth="107.20001220703125" text="Email" />
-                        <TableColumn fx:id="phone111" prefWidth="141.60003662109375" text="Phone" />
-                        <TableColumn fx:id="joinedAt111" prefWidth="142.39996337890625" text="Joined at" />
-                        <TableColumn fx:id="role111" prefWidth="209.60003662109375" text="Role" />
-                     </columns>
-                  </TableView>
+                  <HBox prefHeight="534.0" prefWidth="1003.0">
+                     <children>
+                        <TableView fx:id="material_table" prefHeight="458.0" prefWidth="623.0">
+                           <columns>
+                              <TableColumn fx:id="idMaterial" prefWidth="83.0" text="#" />
+                              <TableColumn fx:id="materialLabel" prefWidth="537.0" text="Label" />
+                           </columns>
+                        </TableView>
+                        <Pane fx:id="absenceForm1" prefHeight="510.0" prefWidth="382.0">
+                           <children>
+                              <Label layoutX="59.0" layoutY="35.0" text="Material">
+                                 <font>
+                                    <Font name="Gadugi" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btn_material_save" layoutX="163.0" layoutY="183.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="74.0" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 15px;" text="Save">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <TextField fx:id="tf_label_material" layoutX="57.0" layoutY="76.0" prefHeight="49.0" prefWidth="311.0" promptText="Label" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 50px; -fx-border-radius: 50px;">
+                                 <font>
+                                    <Font name="Gadugi" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
                </children>
             </AnchorPane>
-            <GridPane fx:id="dashboard_pane" prefHeight="512.0" prefWidth="1012.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <AnchorPane fx:id="correspond_pane" layoutX="20.0" prefHeight="510.0" prefWidth="1011.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <HBox layoutX="-1.0" layoutY="3.0" prefHeight="539.0" prefWidth="1005.0">
+                     <children>
+                        <TableView fx:id="correspond_table" prefHeight="458.0" prefWidth="624.0">
+                           <columns>
+                              <TableColumn fx:id="correspondId" prefWidth="61.0" text="#" />
+                              <TableColumn fx:id="userCorrespond" prefWidth="163.0" text="User" />
+                              <TableColumn fx:id="correspondMaterial" prefWidth="197.0" text="Material" />
+                              <TableColumn fx:id="correspondClass" prefWidth="202.0" text="Class" />
+                           </columns>
+                        </TableView>
+                        <Pane fx:id="correspondForm" prefHeight="510.0" prefWidth="382.0">
+                           <children>
+                              <Label layoutX="59.0" layoutY="35.0" text="Correspondence">
+                                 <font>
+                                    <Font name="Gadugi" size="16.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="cb_userCorrespond" layoutX="17.0" layoutY="76.0" prefHeight="36.0" prefWidth="160.0" promptText="User" style="-fx-background-color: rgba(183, 183, 183, 0.1);" />
+                              <Button fx:id="btn_correspond_save" layoutX="154.0" layoutY="258.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="74.0" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 15px;" text="Save">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <ComboBox fx:id="cb_materialCorrespond" layoutX="202.0" layoutY="76.0" prefHeight="36.0" prefWidth="160.0" promptText="Material" style="-fx-background-color: rgba(183, 183, 183, 0.1);" />
+                              <ComboBox fx:id="cb_classCorrespond" layoutX="14.0" layoutY="158.0" prefHeight="36.0" prefWidth="349.0" promptText="Class" style="-fx-background-color: rgba(183, 183, 183, 0.1);" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="absence_pane" layoutX="18.0" layoutY="1.0" prefHeight="510.0" prefWidth="1011.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="18.0">
+               <children>
+                  <HBox prefHeight="535.0" prefWidth="1008.0">
+                     <children>
+                        <TableView fx:id="absence_table" prefHeight="458.0" prefWidth="624.0">
+                           <columns>
+                              <TableColumn fx:id="idAbsence" prefWidth="52.50036811828613" text="#" />
+                              <TableColumn fx:id="absenceUser" prefWidth="130.83419036865234" text="User" />
+                              <TableColumn fx:id="absenceMaterial" prefWidth="141.66766357421875" text="Material" />
+                              <TableColumn fx:id="absenceDate" prefWidth="148.3343505859375" text="Date" />
+                              <TableColumn fx:id="lesson" prefWidth="151.667724609375" text="Lesson" />
+                           </columns>
+                        </TableView>
+                        <Pane fx:id="absenceForm" prefHeight="510.0" prefWidth="382.0">
+                           <children>
+                              <Label layoutX="59.0" layoutY="35.0" text="Absence">
+                                 <font>
+                                    <Font name="Gadugi" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tf_lesson" layoutX="202.0" layoutY="137.0" prefHeight="36.0" prefWidth="166.0" promptText="Lesson" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 50px; -fx-border-radius: 50px;">
+                                 <font>
+                                    <Font name="Gadugi" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <ComboBox fx:id="cb_user_absence" layoutX="17.0" layoutY="76.0" prefHeight="36.0" prefWidth="160.0" promptText="User" style="-fx-background-color: rgba(183, 183, 183, 0.1);" />
+                              <Button fx:id="btn_absence_save" layoutX="154.0" layoutY="258.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="74.0" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 15px;" text="Save">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <ComboBox fx:id="cb_absence_material" layoutX="202.0" layoutY="76.0" prefHeight="36.0" prefWidth="160.0" promptText="Material" style="-fx-background-color: rgba(183, 183, 183, 0.1);" />
+                              <DatePicker fx:id="dp_date" layoutX="9.0" layoutY="137.0" prefHeight="37.0" prefWidth="183.0" promptText="Date" />
+                              <Button fx:id="print_absence" layoutX="39.0" layoutY="427.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="112.0" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 15px;" text="Print">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <GridPane fx:id="dashboard_pane" prefHeight="512.0" prefWidth="1012.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints maxHeight="251.60001220703123" minHeight="10.0" prefHeight="171.60001220703123" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="341.1999877929687" minHeight="10.0" prefHeight="341.1999877929687" vgrow="SOMETIMES" />
-              </rowConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="251.60001220703123" minHeight="10.0" prefHeight="171.60001220703123" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="341.1999877929687" minHeight="10.0" prefHeight="341.1999877929687" vgrow="SOMETIMES" />
+               </rowConstraints>
                <children>
-                  <TableView editable="true" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="1">
-                    <columns>
-                      <TableColumn prefWidth="75.0" text="#" />
-                      <TableColumn prefWidth="136.80001831054688" text="Name" />
-                        <TableColumn prefWidth="123.99990844726562" text="Department" />
-                        <TableColumn prefWidth="128.79998779296875" text="Age" />
-                        <TableColumn prefWidth="155.20001220703125" text="Disipline" />
-                        <TableColumn prefWidth="143.199951171875" text="Status" />
-                    </columns>
-                     <GridPane.margin>
-                        <Insets left="20.0" />
-                     </GridPane.margin>
-                  </TableView>
                   <Group>
                      <GridPane.margin>
                         <Insets left="21.0" />
                      </GridPane.margin>
                      <children>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="113.0" stroke="#eceef6" strokeType="INSIDE" width="217.0" />
-                        <Label layoutX="17.0" text="Total Employees">
+                        <Label layoutX="17.0" text="Total Students">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="18.0" layoutY="31.0" text="856">
+                        <Label fx:id="students_number" layoutX="18.0" layoutY="31.0" text="856">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
                         </Label>
-                        <Label layoutX="18.0" layoutY="74.0" text="Employee" textFill="#949494">
+                        <Label layoutX="18.0" layoutY="74.0" text="Student" textFill="#949494">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -234,17 +389,17 @@
                   <Group layoutX="31.0" layoutY="82.0" GridPane.columnIndex="1">
                      <children>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="113.0" stroke="#eceef6" strokeType="INSIDE" width="217.0" />
-                        <Label layoutX="17.0" text="Total Employees">
+                        <Label layoutX="17.0" text="Total Teachers">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="18.0" layoutY="31.0" text="856">
+                        <Label fx:id="teacher_number" layoutX="18.0" layoutY="31.0" text="856">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
                         </Label>
-                        <Label layoutX="18.0" layoutY="74.0" text="Employee" textFill="#949494">
+                        <Label layoutX="18.0" layoutY="74.0" text="Teacher" textFill="#949494">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -257,17 +412,17 @@
                   <Group layoutX="283.0" layoutY="82.0" GridPane.columnIndex="2">
                      <children>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="113.0" stroke="#eceef6" strokeType="INSIDE" width="217.0" />
-                        <Label layoutX="17.0" text="Total Employees">
+                        <Label layoutX="17.0" text="Total Classes">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="18.0" layoutY="31.0" text="856">
+                        <Label fx:id="classes_number" layoutX="18.0" layoutY="31.0" text="856">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
                         </Label>
-                        <Label layoutX="18.0" layoutY="74.0" text="Employee" textFill="#949494">
+                        <Label layoutX="18.0" layoutY="74.0" text="Class" textFill="#949494">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -280,17 +435,17 @@
                   <Group layoutX="536.0" layoutY="82.0" GridPane.columnIndex="3">
                      <children>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="113.0" stroke="#eceef6" strokeType="INSIDE" width="217.0" />
-                        <Label layoutX="17.0" text="Total Employees">
+                        <Label layoutX="17.0" text="Total Materials">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="18.0" layoutY="31.0" text="856">
+                        <Label fx:id="number_materials" layoutX="18.0" layoutY="31.0" text="856">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
                         </Label>
-                        <Label layoutX="18.0" layoutY="74.0" text="Employee" textFill="#949494">
+                        <Label layoutX="18.0" layoutY="74.0" text="Material" textFill="#949494">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -300,67 +455,16 @@
                         <Insets left="20.0" />
                      </GridPane.margin>
                   </Group>
-                  <PieChart prefHeight="341.0" prefWidth="286.0" title="Employee Composition" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <BarChart fx:id="absence_chart" GridPane.columnSpan="4" GridPane.rowIndex="1">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
                </children>
             </GridPane>
-            <AnchorPane fx:id="account_pane" prefHeight="510.0" prefWidth="995.0" AnchorPane.leftAnchor="21.0">
-               <children>
-                  <HBox prefHeight="510.0" prefWidth="1003.0">
-                     <children>
-                        <TableView fx:id="users_table" prefHeight="510.0" prefWidth="621.0">
-                          <columns>
-                            <TableColumn fx:id="id" prefWidth="31.199981689453125" text="#" />
-                              <TableColumn fx:id="firstName" prefWidth="95.99999618530273" text="First name" />
-                              <TableColumn fx:id="lastName" prefWidth="102.4000244140625" text="Last name" />
-                              <TableColumn fx:id="email" prefWidth="100.80000305175781" text="Email" />
-                              <TableColumn fx:id="phone" prefWidth="110.800048828125" text="Phone" />
-                              <TableColumn fx:id="role" prefWidth="130.00006103515625" text="Role" />
-                              <TableColumn prefWidth="47.99997558593748" />
-                          </columns>
-                        </TableView>
-                        <Pane fx:id="accountForm" prefHeight="510.0" prefWidth="382.0">
-                           <children>
-                              <Label layoutX="59.0" layoutY="35.0" text="Account">
-                                 <font>
-                                    <Font name="Gadugi" size="16.0" />
-                                 </font>
-                              </Label>
-                              <TextField layoutX="14.0" layoutY="74.0" prefHeight="25.0" prefWidth="166.0" promptText="Usename" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 50px; -fx-border-radius: 50px;">
-                                 <font>
-                                    <Font name="Gadugi" size="14.0" />
-                                 </font>
-                              </TextField>
-                              <TextField layoutX="202.0" layoutY="74.0" prefHeight="25.0" prefWidth="166.0" promptText="Email" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 50px; -fx-border-radius: 50px;">
-                                 <font>
-                                    <Font name="Gadugi" size="14.0" />
-                                 </font>
-                              </TextField>
-                              <TextField layoutX="14.0" layoutY="124.0" prefHeight="25.0" prefWidth="166.0" promptText="First name" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 50px; -fx-border-radius: 50px;">
-                                 <font>
-                                    <Font name="Gadugi" size="14.0" />
-                                 </font>
-                              </TextField>
-                              <TextField layoutX="202.0" layoutY="124.0" prefHeight="25.0" prefWidth="166.0" promptText="Last name" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 50px; -fx-border-radius: 50px;">
-                                 <font>
-                                    <Font name="Gadugi" size="14.0" />
-                                 </font>
-                              </TextField>
-                              <TextField layoutX="14.0" layoutY="171.0" prefHeight="25.0" prefWidth="166.0" promptText="Phone" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 50px; -fx-border-radius: 50px;">
-                                 <font>
-                                    <Font name="Gadugi" size="14.0" />
-                                 </font>
-                              </TextField>
-                              <TextField layoutX="202.0" layoutY="171.0" prefHeight="25.0" prefWidth="166.0" promptText="Phone" style="-fx-background-color: rgba(183, 183, 183, 0.1); -fx-background-radius: 50px; -fx-border-radius: 50px;">
-                                 <font>
-                                    <Font name="Gadugi" size="14.0" />
-                                 </font>
-                              </TextField>
-                           </children>
-                        </Pane>
-                     </children>
-                  </HBox>
-               </children>
-            </AnchorPane>
          </children>
       </AnchorPane>
    </center>

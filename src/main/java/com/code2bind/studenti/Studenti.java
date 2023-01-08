@@ -14,7 +14,7 @@ import java.util.Objects;
 public class Studenti extends Application {
 
     // Just a counter to create some delay while showing preloader.
-    private static final double COUNT_LIMIT = 8000;
+    private static final double COUNT_LIMIT = 1000;
 
     private static int stepCount = 1;
 

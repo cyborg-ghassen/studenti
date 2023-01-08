@@ -15,6 +15,10 @@ public class Model implements ModelManager {
 
     private String name;
 
+    public Model() throws SQLException {
+
+    }
+
     public void setName(String name) {
         this.name = name;
     }

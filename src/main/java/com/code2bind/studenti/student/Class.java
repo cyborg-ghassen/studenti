@@ -4,6 +4,8 @@ import com.code2bind.studenti.auth.ContentType;
 import com.code2bind.studenti.auth.Permission;
 import com.code2bind.studenti.database.Database;
 import com.code2bind.studenti.managers.Model;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 
 import java.sql.SQLException;
 import java.util.Dictionary;
@@ -39,5 +41,50 @@ public class Class extends Model {
         fields.put("level", "varchar(80)");
         fields.put("field", "varchar(80)");
         return fields;
+    }
+
+    private SimpleIntegerProperty id;
+    private SimpleStringProperty label;
+    private SimpleStringProperty field;
+    private SimpleStringProperty level;
+
+    public Class(int id, String label, String field, String level) throws SQLException {
+        super();
+        this.id = new SimpleIntegerProperty(id);
+        this.label = new SimpleStringProperty(label);
+        this.field = new SimpleStringProperty(field);
+        this.level = new SimpleStringProperty(level);
+    }
+
+    public int getId() {
+        return id.get();
+    }
+
+    public String getLabel() {
+        return label.get();
+    }
+
+    public String getField() {
+        return field.get();
+    }
+
+    public String getLevel() {
+        return level.get();
+    }
+
+    public void setId(int id) {
+        this.id.set(id);
+    }
+
+    public void setField(String field) {
+        this.field.set(field);
+    }
+
+    public void setLevel(String level) {
+        this.level.set(level);
+    }
+
+    public void setLabel(String label) {
+        this.label.set(label);
     }
 }

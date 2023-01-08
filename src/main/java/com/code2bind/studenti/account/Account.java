@@ -4,21 +4,29 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class Account {
     private SimpleStringProperty id;
+    private SimpleStringProperty username;
     private SimpleStringProperty phone;
     private SimpleStringProperty firstName;
     private SimpleStringProperty lastName;
-    private SimpleStringProperty userName;
     private SimpleStringProperty email;
     private SimpleStringProperty role;
-    private SimpleStringProperty joinedAt;
 
-    public Account(String id, String firstName, String lastName, String email, String phone, String role){
+    public Account(String id, String username, String firstName, String lastName, String email, String phone, String role){
         this.id = new SimpleStringProperty(id);
+        this.username = new SimpleStringProperty(username);
         this.phone = new SimpleStringProperty(phone);
         this.firstName = new SimpleStringProperty(firstName);
         this.lastName = new SimpleStringProperty(lastName);
         this.email = new SimpleStringProperty(email);
         this.role = new SimpleStringProperty(role);
+    }
+
+    public void setUsername(String username) {
+        this.username.set(username);
+    }
+
+    public String getUsername() {
+        return username.get();
     }
 
     public void setId(String id) {
@@ -53,20 +61,8 @@ public class Account {
         this.lastName.set(lastName);
     }
 
-    public void setUserName(String userName) {
-        this.userName.set(userName);
-    }
-
-    public void setJoinedAt(String joinedAt) {
-        this.joinedAt.set(joinedAt);
-    }
-
     public void setRole(String role) {
         this.role.set(role);
-    }
-
-    public String getJoinedAt() {
-        return joinedAt.get();
     }
 
     public String getFirstName() {
@@ -79,10 +75,6 @@ public class Account {
 
     public String getEmail() {
         return email.get();
-    }
-
-    public String getUserName() {
-        return userName.get();
     }
 
     public String getRole() {

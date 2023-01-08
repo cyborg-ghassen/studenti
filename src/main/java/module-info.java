@@ -8,6 +8,9 @@ module com.code2bind.studenti {
     requires org.kordamp.bootstrapfx.core;
     requires io.github.cdimascio.dotenv.java;
     requires java.sql;
+    requires org.jetbrains.annotations;
+    requires itextpdf;
+    requires java.mail;
 
     opens com.code2bind.studenti to javafx.fxml;
     exports com.code2bind.studenti;
@@ -19,4 +22,6 @@ module com.code2bind.studenti {
     opens com.code2bind.studenti.exceptions to javafx.fxml;
     exports com.code2bind.studenti.account;
     opens com.code2bind.studenti.account to javafx.fxml;
+    exports com.code2bind.studenti.student;
+    opens com.code2bind.studenti.student to javafx.fxml;
 }
